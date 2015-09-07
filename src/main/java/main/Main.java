@@ -9,9 +9,6 @@ import org.eclipse.jetty.servlet.ServletHolder;
 
 import javax.servlet.Servlet;
 
-/**
- * @author v.chibrikov
- */
 public class Main {
     public static void main(String[] args) throws Exception {
         int port = 8080;
@@ -21,8 +18,6 @@ public class Main {
         }
 
         System.out.append("Starting at port: ").append(String.valueOf(port)).append('\n');
-
-       // AccountService accountService = new AccountService();
 
         //Servlet signin = new SignInServlet(accountService);
         //Servlet signUp = new SignUpServlet(accountService);
