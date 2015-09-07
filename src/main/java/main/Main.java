@@ -19,8 +19,6 @@ public class Main {
 
         System.out.append("Starting at port: ").append(String.valueOf(port)).append('\n');
 
-       // AccountService accountService = new AccountService();
-
         //Servlet signin = new SignInServlet(accountService);
         //Servlet signUp = new SignUpServlet(accountService);
 
