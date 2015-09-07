@@ -9,9 +9,6 @@ import org.eclipse.jetty.servlet.ServletHolder;
 
 import javax.servlet.Servlet;
 
-/**
- * @author v.chibrikov
- */
 public class Main {
     public static void main(String[] args) throws Exception {
         int port = 8080;
