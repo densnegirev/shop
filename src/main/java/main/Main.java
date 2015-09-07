@@ -28,8 +28,7 @@ public class Main {
         //Servlet signUp = new SignUpServlet(accountService);
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-//        context.addServlet(new ServletHolder(signin), "/signin");
-//        context.addServlet(new ServletHolder(signUp), "/signup");
+
 
         ResourceHandler resource_handler = new ResourceHandler();
         resource_handler.setDirectoriesListed(true);
