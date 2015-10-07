@@ -1,0 +1,37 @@
+#profile_panel
+{
+	width: 248px;
+	height: 120px;
+	background-color: #333;
+	position: absolute;
+	padding: 4px;
+	right: 32px;
+	bottom: 32px;
+
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+#profile_panel_layout
+{
+	width: 100%;
+	text-align: center;
+}
+
+#username a
+{
+	color: #fff;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+#trash a
+{
+	color: #ccc;
+}
+
+#logout a
+{
+	color: #ccc;
+}

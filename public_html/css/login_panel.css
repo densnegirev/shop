@@ -1,0 +1,40 @@
+#login_panel
+{
+	width: 248px;
+	height: 120px;
+	background-color: #333;
+	position: absolute;
+	padding: 4px;
+	right: 32px;
+	bottom: 32px;
+
+	border-radius: 8px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+
+#login_panel table
+{
+	border: 0px;
+	width: 248px;
+}
+
+#login_panel table tr
+{
+	text-align: right;
+}
+
+#login_panel table td
+{
+	color: #fff;
+}
+
+#login_panel table tr td a
+{
+	color: #fff;
+}
+
+#login_panel table tr td a:hover
+{
+	color: #999;
+}
