@@ -6,7 +6,7 @@
 				Пароль:
 			</td>
 			<td>
-				<input type="text" name="password" />
+				<input type="password" value="${password}" name="password" />
 			</td>
 		</tr>
 		<tr>
@@ -14,7 +14,7 @@
 				Пароль еще раз:
 			</td>
 			<td>
-				<input type="text" name="password_again" />
+				<input type="password" value="******" name="password_again" />
 			</td>
 		</tr>
 		<tr>
@@ -22,7 +22,7 @@
 				Фамилия:
 			</td>
 			<td>
-				<input type="text" name="familiya" />
+				<input type="text" value="${familiya}" name="familiya" />
 			</td>
 		</tr>
 		<tr>
@@ -30,7 +30,7 @@
 				Имя:
 			</td>
 			<td>
-				<input type="text" name="imya" />
+				<input type="text" value="${imya}" name="imya" />
 			</td>
 		</tr>
 		<tr>
@@ -38,7 +38,7 @@
 				Отчество:
 			</td>
 			<td>
-				<input type="text" name="otchestvo" />
+				<input type="text" value="${otchestvo}" name="otchestvo" />
 			</td>
 		</tr>
 		<tr>
@@ -46,7 +46,7 @@
 				Почта:
 			</td>
 			<td>
-				<input type="text" name="email" />
+				<input type="text" value="${email}" name="email" />
 			</td>
 		</tr>
 		<tr>
@@ -54,7 +54,7 @@
 				Адрес:
 			</td>
 			<td>
-				<textarea name="address" cols="40" rows="5"></textarea>
+				<input type="text" value="${address}" name="address" />
 			</td>
 		</tr>
 		<tr>
@@ -62,12 +62,12 @@
 				Телефон:
 			</td>
 			<td>
-				<input type="text" name="phone" />
+				<input type="text" value="${phone}" name="phone" />
 			</td>
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="submit" name="submit" value="Зарегистрироваться" />
+				<input type="submit" name="submit" value="Обновить" />
 			</td>
 		</tr>
 	</table>

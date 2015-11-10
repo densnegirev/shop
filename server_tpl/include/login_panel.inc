@@ -7,7 +7,7 @@
 					Логин:
 				</td>
 				<td>
-					<input type="text" name="username" />
+					<input type="text" name="login" />
 				</td>
 			</tr>
 			<tr>

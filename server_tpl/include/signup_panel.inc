@@ -6,7 +6,7 @@
 				Логин:
 			</td>
 			<td>
-				<input type="text" name="username" />
+				<input type="text" name="login" />
 			</td>
 		</tr>
 		<tr>
@@ -14,7 +14,7 @@
 				Пароль:
 			</td>
 			<td>
-				<input type="text" name="password" />
+				<input type="password" name="password" />
 			</td>
 		</tr>
 		<tr>
@@ -22,7 +22,7 @@
 				Пароль еще раз:
 			</td>
 			<td>
-				<input type="text" name="password_again" />
+				<input type="password" name="password_again" />
 			</td>
 		</tr>
 		<tr>
