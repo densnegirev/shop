@@ -82,6 +82,7 @@ public class DBServiceFoxPro implements DBService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 		return null;
 	}
 
@@ -96,13 +97,21 @@ public class DBServiceFoxPro implements DBService {
 		String addr = up.getAddress().equals(address) ? "" : " address='" + address + "'";
 		//(id, login, email, password, address, phone, familiya, imya, otchestvo)
 		StringBuilder sql= new StringBuilder().append("UPDATE users SET");
-		
-		sql.append(mail).append(pass).append(addr).append(ph).append(fam).append(name).append(otc).append(" WHERE id='").append(up.getId() + "'");
-		
+
+		StringBuilder params = new StringBuilder();
+
+		params.append(mail).append(pass).append(addr).append(ph).append(fam).append(name).append(otc);
+
+		if (params.length() == 0) {
+			return true;
+		}
+
+		params.append(" WHERE id='").append(up.getId() + "'");
+		sql.append(params);
+
 		String sqll = sql.toString().replace("' ", "' ,").replace(",W", "W");
-
 		System.out.println(sqll.toString());
-
+		
 		try {
 			con = DriverManager.getConnection(url, "", "");
 			
