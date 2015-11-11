@@ -7,6 +7,16 @@ body
 	font-size: 14px;
 }
 
+a
+{
+	color: #ccc;
+}
+
+a:hover
+{
+	color: #fff;
+}
+
 #out_panel
 {
 	width: 1032px;
@@ -56,12 +66,6 @@ body
 	border-radius: 8px;
 	-moz-border-radius: 8px;
 	-webkit-border-radius: 8px;
-}
-
-#sidebar_left ul li a
-{
-	color: #ccc;
-	size: 24px;
 }
 
 #content
