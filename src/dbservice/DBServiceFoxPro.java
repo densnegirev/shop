@@ -48,7 +48,7 @@ public class DBServiceFoxPro implements DBService {
 
 	@Override
 	public UserProfile getUser(String userName) {
-		String sql = "SELECT * FROM users WHERE login='" + userName + "'";
+		String sql = "SELECT * FROM users WHERE login = '" + userName + "'";
 
 		try {
 			con = DriverManager.getConnection(url, "", "");

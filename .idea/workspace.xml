@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cdfaa-5b11-426f-a0ae-f3accb93a073" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Dropbox\shop\db\shop.PJT" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dropbox\shop\db\shop.pjx" afterPath="" />
-      <change type="DELETED" beforePath="D:\Dropbox\shop\src\dbservice\DBServiceRam.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/shop.DCT" afterPath="$PROJECT_DIR$/db/shop.DCT" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/shop.DCX" afterPath="$PROJECT_DIR$/db/shop.DCX" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/shop.dbc" afterPath="$PROJECT_DIR$/db/shop.dbc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/users.BAK" afterPath="$PROJECT_DIR$/db/users.BAK" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/users.CDX" afterPath="$PROJECT_DIR$/db/users.CDX" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/users.dbf" afterPath="$PROJECT_DIR$/db/users.dbf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/AccountService.java" afterPath="$PROJECT_DIR$/src/main/AccountService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBService.java" afterPath="$PROJECT_DIR$/src/dbservice/DBService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" afterPath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/Index.java" afterPath="$PROJECT_DIR$/src/frontend/Index.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/ProfileServlet.java" afterPath="$PROJECT_DIR$/src/frontend/ProfileServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/SignUpServlet.java" afterPath="$PROJECT_DIR$/src/frontend/SignUpServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/UserProfile.java" afterPath="$PROJECT_DIR$/src/main/UserProfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public_html/css/profile_panel.css" afterPath="$PROJECT_DIR$/public_html/css/profile_panel.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server_tpl/include/profile_panel.inc" afterPath="$PROJECT_DIR$/server_tpl/include/profile_panel.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server_tpl/include/signup_panel.inc" afterPath="$PROJECT_DIR$/server_tpl/include/signup_panel.inc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,11 +39,11 @@
       <file leaf-file-name="DBServiceFoxPro.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.9606987">
-              <caret line="114" column="77" selection-start-line="114" selection-start-column="77" selection-end-line="114" selection-end-column="77" />
+            <state vertical-scroll-proportion="-1.3377001">
+              <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
               <folding>
-                <marker date="1447263236050" expanded="true" signature="590:984" placeholder="INSERT INTO ..." />
-                <marker date="1447263236050" expanded="true" signature="1306:1356" placeholder="SELECT * FRO..users..." />
+                <marker date="1447263945915" expanded="true" signature="590:984" placeholder="INSERT INTO ..." />
+                <marker date="1447263945915" expanded="true" signature="1306:1358" placeholder="SELECT * FRO..users..." />
               </folding>
             </state>
           </provider>
@@ -556,16 +538,16 @@
       <created>1447244101632</created>
       <option name="number" value="Default" />
       <updated>1447244101632</updated>
-      <workItem from="1447244102833" duration="15250000" />
+      <workItem from="1447244102833" duration="15985000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15250000" />
+    <option name="totallyTimeSpent" value="15985000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -575,7 +557,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298969" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3298969" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -767,11 +749,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9606987">
-          <caret line="114" column="77" selection-start-line="114" selection-start-column="77" selection-end-line="114" selection-end-column="77" />
+        <state vertical-scroll-proportion="-1.3377001">
+          <caret line="50" column="56" selection-start-line="50" selection-start-column="56" selection-end-line="50" selection-end-column="56" />
           <folding>
-            <marker date="1447263236050" expanded="true" signature="590:984" placeholder="INSERT INTO ..." />
-            <marker date="1447263236050" expanded="true" signature="1306:1356" placeholder="SELECT * FRO..users..." />
+            <marker date="1447263945915" expanded="true" signature="590:984" placeholder="INSERT INTO ..." />
+            <marker date="1447263945915" expanded="true" signature="1306:1358" placeholder="SELECT * FRO..users..." />
           </folding>
         </state>
       </provider>
