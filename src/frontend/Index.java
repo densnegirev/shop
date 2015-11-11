@@ -1,6 +1,7 @@
 package frontend;
 
 import main.AccountService;
+import main.Globals;
 import main.UserProfile;
 import templater.PageGenerator;
 import javax.servlet.ServletException;
@@ -23,19 +24,18 @@ public class Index extends HttpServlet {
 		HttpSession session = request.getSession();
 		Map<String, Object> pageVariables = new HashMap<>();
 		String content = "CONTENT";
-		String title = "Интернет магазин ТВ";
 		String header;
 
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
-		pageVariables.put("TITLE", title);
+		pageVariables.put("TITLE",Globals.SITE_TITLE + " | Главная");
 		pageVariables.put("CONTENT", content);
 
 		if (accountService.getSessions(session.getId()) != null) {
 			Map<String, Object> pv = new HashMap<>();
 			UserProfile up = accountService.getSessions(session.getId());
 
-			pv.put("USERNAME", up.getImya() + " " + up.getFamiliya());
+			pv.put("USERNAME", up.getLogin());
 			header = PageGenerator.getPage("server_tpl/include/user_panel.inc", pv);
 		} else {
 			header = PageGenerator.getPage("server_tpl/include/login_panel.inc", pageVariables);

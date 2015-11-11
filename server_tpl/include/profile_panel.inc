@@ -14,7 +14,7 @@
 				Пароль еще раз:
 			</td>
 			<td>
-				<input type="password" value="******" name="password_again" />
+				<input type="password" value="${password_again}" name="password_again" />
 			</td>
 		</tr>
 		<tr>

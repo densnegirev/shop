@@ -7,11 +7,10 @@ import com.hxtt.sql.dbf.DBFDriver;
 public class DBServiceFoxPro implements DBService {
 	private String url = "jdbc:DBF:///db";
 	private Connection con;
-	private Driver driver;
 
 	public DBServiceFoxPro() {
 		try {
-			driver = (DBFDriver)Class.forName("com.hxtt.sql.dbf.DBFDriver").newInstance();
+			Driver driver = (DBFDriver)Class.forName("com.hxtt.sql.dbf.DBFDriver").newInstance();
 			DriverManager.registerDriver(driver);
 		}
 		catch (Exception e) {
@@ -36,8 +35,8 @@ public class DBServiceFoxPro implements DBService {
 			con = DriverManager.getConnection(url, "", "");
 
 			Statement stmt = con.createStatement();
-			int rse = stmt.executeUpdate(sql1);
-			
+
+			stmt.executeUpdate(sql1);
 			stmt.close();
 			con.close();
 		} catch (SQLException e) {
@@ -49,7 +48,7 @@ public class DBServiceFoxPro implements DBService {
 
 	@Override
 	public UserProfile getUser(String userName) {
-		String sql = "SELECT * FROM users WHERE login='" + userName.toLowerCase() + "'";
+		String sql = "SELECT * FROM users WHERE login='" + userName + "'";
 
 		try {
 			con = DriverManager.getConnection(url, "", "");

@@ -1,6 +1,7 @@
 package frontend;
 
 import main.AccountService;
+import main.Globals;
 import main.UserProfile;
 import templater.PageGenerator;
 import javax.servlet.ServletException;
@@ -23,18 +24,18 @@ public class ProfileServlet extends HttpServlet {
 		Map<String, Object> pageVariables = new HashMap<>();
 		HttpSession session = request.getSession();
 		String content;
-		String title = "Profile";
 		String header;
 
 		response.setCharacterEncoding("UTF-8");
-		pageVariables.put("TITLE", title);
+		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Профиль");
 
 		if (accountService.getSessions(session.getId()) != null) {
 			Map<String, Object> pv = new HashMap<>();
 			UserProfile up = accountService.getSessions(session.getId());
 
-			pv.put("USERNAME", up.getImya() + " " + up.getFamiliya());
+			pv.put("USERNAME", up.getLogin());
 			pv.put("password", up.getPassword());
+			pv.put("password_again", up.getPassword());
 			pv.put("email", up.getEmail());
 			pv.put("familiya", up.getFamiliya());
 			pv.put("imya", up.getImya());
@@ -55,6 +56,7 @@ public class ProfileServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String password = request.getParameter("password");
+		String passwordAgain = request.getParameter("password_again");
 		String email =  request.getParameter("email");
 		String familiya = request.getParameter("familiya");
 		String imya = request.getParameter("imya");
@@ -63,7 +65,13 @@ public class ProfileServlet extends HttpServlet {
 		String address = request.getParameter("address");
 		HttpSession session = request.getSession();
 
-		accountService.updateUser(session.getId(), password, email, familiya, imya, otchestvo, phone, address);
-		response.sendRedirect("/index");
+		if (password.equals(passwordAgain)) {
+			accountService.updateUser(session.getId(), password, email, familiya, imya, otchestvo, phone, address);
+			response.sendRedirect("/index");
+		} else {
+			response.sendRedirect("/profile");
+
+			System.out.println("password != passwordAgain");
+		}
 	}
 }
