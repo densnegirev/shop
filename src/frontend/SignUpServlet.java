@@ -1,5 +1,6 @@
 package frontend;
 
+import FormValidators.FormValidator;
 import main.AccountService;
 import main.Globals;
 import main.UserProfile;
@@ -14,18 +15,23 @@ import java.util.Map;
 
 public class SignUpServlet extends HttpServlet {
 	private AccountService accountService;
+	private String errors;
 
 	public SignUpServlet(AccountService accountService) {
 		this.accountService = accountService;
+		this.errors = "";
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Map<String, Object> pageVariables = new HashMap<>();
+
+		pageVariables.put("errors", "");
+
 		String content = PageGenerator.getPage("server_tpl/include/signup_panel.inc", pageVariables);
 
 		pageVariables.put("CONTENT", content);
 		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Регистрация");
-		pageVariables.put("HEADER", " ");
+		pageVariables.put("HEADER", "");
 		response.setCharacterEncoding("UTF-8");
 		response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
 		response.setStatus(HttpServletResponse.SC_OK);
@@ -42,27 +48,44 @@ public class SignUpServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String address = request.getParameter("address");
 		UserProfile user = new UserProfile(login, password, email, familiya, imya, otchestvo, phone, address);
+		FormValidator[] validators = new FormValidator[] {
+				FormValidator.create(FormValidator.Types.LOGIN, login, "Логин должен состоять хотя бы из одного символа"),
+				FormValidator.create(FormValidator.Types.PASSWORD, password, "Пароль должен быть не менее 8 символов")
+		};
 
-		boolean isOk = false;
+		errors = "";
 
-		if (login.length() == 0) {
-			System.out.println("REG: Empty login");
-		} else if (password.length() < 8) {
-			System.out.println("REG: Password length < 8");
-		} else if (!password.equals(passwordAgain)) {
-			System.out.println("REG: password != passwordAgain");
-		} else if (!accountService.addUser(login, user)) {
-			System.out.println("REG: addUser failed");
-		} else {
-			isOk = true;
+		for (int i = 0; i < validators.length; ++i) {
+			if (!validators[i].validate()) {
+				errors += "<li>" + validators[i].getErrorMsg() + "</li>";
+			}
 		}
 
-		if (isOk) {
+		if (!password.equals(passwordAgain)) {
+			errors += "<li>Пароли не совпадают</li>";
+		}
+
+		if (errors.length() == 0) {
+			accountService.addUser(login, user);
 			response.sendRedirect("/index");
 
-			System.out.println("REG: " + login + " " + password);
+			System.out.println("Reg: " + login + " " + password);
 		} else {
-			response.sendRedirect("/signup");
+			Map<String, Object> pageVariables = new HashMap<>();
+
+			errors = "<ul>" + errors + "</ul>";
+
+			pageVariables.put("errors", errors);
+
+			String content = PageGenerator.getPage("server_tpl/include/signup_panel.inc", pageVariables);
+
+			pageVariables.put("CONTENT", content);
+			pageVariables.put("TITLE", Globals.SITE_TITLE + " | Регистрация");
+			pageVariables.put("HEADER", "");
+
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
+			response.setStatus(HttpServletResponse.SC_OK);
 		}
 	}
 }

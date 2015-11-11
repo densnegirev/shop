@@ -4,6 +4,6 @@ import main.UserProfile;
 
 public interface DBService {
 	boolean addUser(String userName, UserProfile userProfile);
-	boolean updateUser(String password, String email, String familiya, String imya, String otchestvo, String phone, String address, UserProfile up);
+	boolean updateUser(String password, String familiya, String imya, String otchestvo, String email, String address, String phone, UserProfile up);
 	UserProfile getUser(String userName);
 }

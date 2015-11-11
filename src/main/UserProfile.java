@@ -1,49 +1,37 @@
 package main;
 
 public class UserProfile {
+	private Integer id;
 	private String login;
 	private String password;
-	private String email;
 	private String familiya;
 	private String imya;
 	private String otchestvo;
-	private String phone;
+	private String email;
 	private String address;
-	private Integer id;
+	private String phone;
 
 	public UserProfile() {}
 
-	public UserProfile(String login, String password, String email, String familiya, String imya, String otchestvo, String phone, String address) {
+	public UserProfile(String login, String password, String familiya, String imya, String otchestvo, String email, String address, String phone) {
 		this.login = login;
 		this.password = password;
-		this.email = email;
 		this.familiya = familiya;
 		this.imya = imya;
-		this.phone = phone;
 		this.otchestvo = otchestvo;
+		this.email = email;
 		this.address = address;
+		this.phone = phone;
 	}
 
-	public void update(String password, String email, String familiya, String imya, String otchestvo, String phone, String address) {
+	public void update(String password, String familiya, String imya, String otchestvo, String email, String address, String phone) {
 		this.password = password;
-		this.email = email;
 		this.familiya = familiya;
 		this.imya = imya;
-		this.phone = phone;
 		this.otchestvo = otchestvo;
+		this.email = email;
 		this.address = address;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public String getEmail() {
-		return email;
+		this.phone = phone;
 	}
 
 	public Integer getId() {
@@ -54,12 +42,16 @@ public class UserProfile {
 		this.id = id;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public String getLogin() {
+		return login;
 	}
 
 	public void setLogin(String login) {
 		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
 	}
 
 	public void setPassword(String password) {
@@ -90,12 +82,12 @@ public class UserProfile {
 		this.otchestvo = otchestvo;
 	}
 
-	public String getPhone() {
-		return phone;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getAddress() {
@@ -104,5 +96,13 @@ public class UserProfile {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 }

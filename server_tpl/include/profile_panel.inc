@@ -72,4 +72,5 @@
 		</tr>
 	</table>
 </form>
+<div id="errors">${errors}</div>
 <!-- profile_panel.inc END -->

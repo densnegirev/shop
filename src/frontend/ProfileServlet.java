@@ -1,5 +1,6 @@
 package frontend;
 
+import FormValidators.FormValidator;
 import main.AccountService;
 import main.Globals;
 import main.UserProfile;
@@ -15,6 +16,7 @@ import java.util.Map;
 
 public class ProfileServlet extends HttpServlet {
 	private AccountService accountService;
+	private String errors;
 
 	public ProfileServlet(AccountService accountService) {
 		this.accountService = accountService;
@@ -30,21 +32,22 @@ public class ProfileServlet extends HttpServlet {
 		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Профиль");
 
 		if (accountService.getSessions(session.getId()) != null) {
-			Map<String, Object> pv = new HashMap<>();
 			UserProfile up = accountService.getSessions(session.getId());
 
-			pv.put("USERNAME", up.getLogin());
-			pv.put("password", up.getPassword());
-			pv.put("password_again", up.getPassword());
-			pv.put("email", up.getEmail());
-			pv.put("familiya", up.getFamiliya());
-			pv.put("imya", up.getImya());
-			pv.put("otchestvo", up.getOtchestvo());
-			pv.put("address", up.getAddress());
-			pv.put("phone", up.getPhone());
+			pageVariables.put("USERNAME", up.getLogin());
+			pageVariables.put("password", up.getPassword());
+			pageVariables.put("password_again", up.getPassword());
+			pageVariables.put("familiya", up.getFamiliya());
+			pageVariables.put("imya", up.getImya());
+			pageVariables.put("otchestvo", up.getOtchestvo());
+			pageVariables.put("email", up.getEmail());
+			pageVariables.put("address", up.getAddress());
+			pageVariables.put("phone", up.getPhone());
+			pageVariables.put("errors", "");
 
-			header = PageGenerator.getPage("server_tpl/include/user_panel.inc", pv);
-			content = PageGenerator.getPage("server_tpl/include/profile_panel.inc", pv);
+			header = PageGenerator.getPage("server_tpl/include/user_panel.inc", pageVariables);
+			content = PageGenerator.getPage("server_tpl/include/profile_panel.inc", pageVariables);
+
 			pageVariables.put("HEADER", header);
 			pageVariables.put("CONTENT", content);
 			response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
@@ -57,21 +60,59 @@ public class ProfileServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String password = request.getParameter("password");
 		String passwordAgain = request.getParameter("password_again");
-		String email =  request.getParameter("email");
 		String familiya = request.getParameter("familiya");
 		String imya = request.getParameter("imya");
 		String otchestvo = request.getParameter("otchestvo");
-		String phone = request.getParameter("phone");
+		String email =  request.getParameter("email");
 		String address = request.getParameter("address");
+		String phone = request.getParameter("phone");
 		HttpSession session = request.getSession();
+		FormValidator[] validators = new FormValidator[] {
+				FormValidator.create(FormValidator.Types.PASSWORD, password, "Пароль должен быть не менее 8 символов")
+		};
 
-		if (password.equals(passwordAgain)) {
-			accountService.updateUser(session.getId(), password, email, familiya, imya, otchestvo, phone, address);
+		errors = "";
+
+		for (int i = 0; i < validators.length; ++i) {
+			if (!validators[i].validate()) {
+				errors += "<li>" + validators[i].getErrorMsg() + "</li>";
+			}
+		}
+
+		if (!password.equals(passwordAgain)) {
+			errors += "<li>Пароли не совпадают</li>";
+		}
+
+		if (errors.length() == 0) {
+			accountService.updateUser(session.getId(), password, familiya, imya, otchestvo, email, address, phone);
 			response.sendRedirect("/index");
 		} else {
-			response.sendRedirect("/profile");
+			Map<String, Object> pageVariables = new HashMap<>();
+			UserProfile up = accountService.getSessions(session.getId());
 
-			System.out.println("password != passwordAgain");
+			errors = "<ul>" + errors + "</ul>";
+
+			pageVariables.put("USERNAME", up.getLogin());
+			pageVariables.put("password", up.getPassword());
+			pageVariables.put("password_again", up.getPassword());
+			pageVariables.put("familiya", up.getFamiliya());
+			pageVariables.put("imya", up.getImya());
+			pageVariables.put("otchestvo", up.getOtchestvo());
+			pageVariables.put("email", up.getEmail());
+			pageVariables.put("address", up.getAddress());
+			pageVariables.put("phone", up.getPhone());
+			pageVariables.put("errors", errors);
+
+			String header = PageGenerator.getPage("server_tpl/include/user_panel.inc", pageVariables);
+			String content = PageGenerator.getPage("server_tpl/include/profile_panel.inc", pageVariables);
+
+			pageVariables.put("CONTENT", content);
+			pageVariables.put("TITLE", Globals.SITE_TITLE + " | Профиль");
+			pageVariables.put("HEADER", header);
+
+			response.setCharacterEncoding("UTF-8");
+			response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
+			response.setStatus(HttpServletResponse.SC_OK);
 		}
 	}
 }

@@ -14,9 +14,9 @@ public class AccountService {
 		}
 	}
 
-	public void updateUser(String sessionId, String password, String email, String familiya, String imya, String otchestvo, String phone, String address) {
-		if (dbservice.updateUser(password, email, familiya, imya, otchestvo, phone, address, sessions.get(sessionId))) {
-			sessions.get(sessionId).update(password, email, familiya, imya, otchestvo, phone, address);
+	public void updateUser(String sessionId, String password, String familiya, String imya, String otchestvo, String email, String address, String phone) {
+		if (dbservice.updateUser(password, familiya, imya, otchestvo, email, address, phone, sessions.get(sessionId))) {
+			sessions.get(sessionId).update(password, familiya, imya, otchestvo, email, address, phone);
 		}
 	}
 

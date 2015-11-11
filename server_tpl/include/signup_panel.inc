@@ -80,4 +80,5 @@
 		</tr>
 	</table>
 </form>
+<div id="errors">${errors}</div>
 <!-- signup_panel.inc END -->

@@ -26,12 +26,7 @@
 	text-decoration: none;
 }
 
-#trash a
+#errors ul li
 {
-	color: #ccc;
-}
-
-#logout a
-{
-	color: #ccc;
+	color: #f00;
 }

@@ -28,7 +28,7 @@ public class Index extends HttpServlet {
 
 		response.setContentType("text/html");
 		response.setCharacterEncoding("UTF-8");
-		pageVariables.put("TITLE",Globals.SITE_TITLE + " | Главная");
+		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Главная");
 		pageVariables.put("CONTENT", content);
 
 		if (accountService.getSessions(session.getId()) != null) {
@@ -41,7 +41,7 @@ public class Index extends HttpServlet {
 			header = PageGenerator.getPage("server_tpl/include/login_panel.inc", pageVariables);
 		}
 		
-		pageVariables.put("HEADER",header);
+		pageVariables.put("HEADER", header);
 		response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
 		response.setStatus(HttpServletResponse.SC_OK);
 	}
