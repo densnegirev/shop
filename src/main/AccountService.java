@@ -8,7 +8,7 @@ public class AccountService {
 	private DBService dbservice;
 	private Map<String, UserProfile> sessions = new HashMap<>();
 
-	AccountService(DBService dbservice) {
+	public AccountService(DBService dbservice) {
 		if (dbservice != null) {
 			this.dbservice = dbservice;
 		}

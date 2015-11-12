@@ -32,7 +32,7 @@ public class SignUpServlet extends HttpServlet {
 		pageVariables.put("CONTENT", content);
 		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Регистрация");
 		pageVariables.put("HEADER", "");
-		response.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding(Globals.ENCODING);
 		response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
 		response.setStatus(HttpServletResponse.SC_OK);
 	}
@@ -83,7 +83,7 @@ public class SignUpServlet extends HttpServlet {
 			pageVariables.put("TITLE", Globals.SITE_TITLE + " | Регистрация");
 			pageVariables.put("HEADER", "");
 
-			response.setCharacterEncoding("UTF-8");
+			response.setCharacterEncoding(Globals.ENCODING);
 			response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
 			response.setStatus(HttpServletResponse.SC_OK);
 		}

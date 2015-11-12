@@ -27,7 +27,7 @@ public class Index extends HttpServlet {
 		String header;
 
 		response.setContentType("text/html");
-		response.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding(Globals.ENCODING);
 		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Главная");
 		pageVariables.put("CONTENT", content);
 

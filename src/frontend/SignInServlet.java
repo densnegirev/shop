@@ -1,6 +1,7 @@
 package frontend;
 
 import main.AccountService;
+import main.Globals;
 import main.UserProfile;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,7 @@ public class SignInServlet extends HttpServlet {
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding(Globals.ENCODING);
 		response.setStatus(HttpServletResponse.SC_NOT_FOUND);
 		response.sendError(404);
 

@@ -8,6 +8,6 @@ public class LoginValidator extends FormValidator {
 
 	@Override
 	public boolean validate() {
-		return value.length() > 0;
+		return value.length() >= 3;
 	}
 }
