@@ -1,8 +1,12 @@
 package dbservice;
 
 import main.UserProfile;
+
+import java.math.BigDecimal;
 import java.sql.*;
+import java.util.ArrayList;
 import com.hxtt.sql.dbf.DBFDriver;
+import product.Item;
 
 public class DBServiceFoxPro implements DBService {
 	private String url = "jdbc:DBF:///db";
@@ -131,5 +135,40 @@ public class DBServiceFoxPro implements DBService {
 		}
 
 		return true;
+	}
+
+	@Override
+	public ArrayList<Item> getItems(int offset, int count) {
+		ArrayList<Item> result = new ArrayList<>();
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT items.item_id, fabricators.name, fabricators.country, types.type, hdforrmats.hd_format, resolution.resolution, items.model, items.diagonal, items.price FROM items, fabricators, types, hdforrmats, resolution WHERE items.fabric_id = fabricators.fabric_id AND items.type_id = types.type_id AND items.format_id = hdforrmats.format_id AND items.resolution_id = resolution.resolution_id";
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				int id = (int)rs.getObject(1);
+				String fabricName = rs.getObject(2).toString();
+				String fabricCountry = rs.getObject(3).toString();
+				String type = rs.getObject(4).toString();
+				String format = rs.getObject(5).toString();
+				String resolution = rs.getObject(6).toString();
+				String model = rs.getObject(7).toString();
+				int diagonal = (int)rs.getObject(8);
+				BigDecimal price = (BigDecimal)rs.getObject(9);
+
+				result.add(new Item(id, fabricName, fabricCountry, type, format, resolution, model, diagonal, price.doubleValue()));
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return result;
 	}
 }

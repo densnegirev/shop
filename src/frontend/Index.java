@@ -3,6 +3,7 @@ package frontend;
 import main.AccountService;
 import main.Globals;
 import main.UserProfile;
+import product.Item;
 import templater.PageGenerator;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,8 +25,30 @@ public class Index extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		Map<String, Object> pageVariables = new HashMap<>();
-		String content = "CONTENT";
+		String rows = "";
 		String header;
+
+		ArrayList<Item> items = Globals.DB_SERVICE.getItems(0, 0);
+
+		for (int i = 0; i < items.size(); ++i) {
+			Item item = items.get(i);
+
+			pageVariables.put("image", "images/items/" + item.getId() + ".png");
+			pageVariables.put("fabricName", item.getFabricName());
+			pageVariables.put("fabricCountry", item.getFabricCountry());
+			pageVariables.put("type", item.getType());
+			pageVariables.put("format", item.getFormat());
+			pageVariables.put("resolution", item.getResolution());
+			pageVariables.put("model", item.getModel());
+			pageVariables.put("diagonal", item.getDiagonal());
+			pageVariables.put("price", item.getPrice());
+
+			rows += PageGenerator.getPage("server_tpl/include/products_table_row.inc", pageVariables);
+		}
+
+		pageVariables.put("rows", rows);
+
+		String content = PageGenerator.getPage("server_tpl/include/products_table.inc", pageVariables);
 
 		response.setContentType("text/html");
 		response.setCharacterEncoding(Globals.ENCODING);

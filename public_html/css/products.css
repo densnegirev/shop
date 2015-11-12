@@ -1,0 +1,22 @@
+#products table
+{
+	width: 100%;
+	border-collapse: collapse;
+	background: #ccc;
+}
+
+#products table, #products tr, #products td
+{
+	border: 1px solid black;
+}
+
+#products td.preview
+{
+	width: 256px;
+}
+
+#products img
+{
+	width: 100%;
+	display: block;
+}
