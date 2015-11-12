@@ -1,6 +1,6 @@
 package frontend;
 
-import FormValidators.FormValidator;
+import formvalidators.FormValidator;
 import main.AccountService;
 import main.Globals;
 import main.UserProfile;

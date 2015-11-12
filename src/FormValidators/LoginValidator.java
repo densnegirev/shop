@@ -1,4 +1,4 @@
-package FormValidators;
+package formvalidators;
 
 public class LoginValidator extends FormValidator {
 	public LoginValidator(String value, String errorMsg) {

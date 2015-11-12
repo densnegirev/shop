@@ -1,4 +1,4 @@
-package FormValidators;
+package formvalidators;
 
 public abstract class FormValidator {
 	protected String value;
