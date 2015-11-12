@@ -2,7 +2,7 @@
 {
 	width: 248px;
 	height: 120px;
-	background-color: #333;
+	background-color: #cec769;
 	position: absolute;
 	padding: 4px;
 	right: 32px;
@@ -21,7 +21,6 @@
 
 #username a
 {
-	color: #fff;
 	font-size: 16px;
 	text-decoration: none;
 }

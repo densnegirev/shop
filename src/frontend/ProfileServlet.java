@@ -68,7 +68,7 @@ public class ProfileServlet extends HttpServlet {
 		String phone = request.getParameter("phone");
 		HttpSession session = request.getSession();
 		FormValidator[] validators = new FormValidator[] {
-				FormValidator.create(FormValidator.Types.PASSWORD, password, "Пароль должен быть не менее 8 символов")
+				FormValidator.create(FormValidator.Types.PASSWORD, password, "Пароль должен быть длинной не менее 8 символов")
 		};
 
 		errors = "";
