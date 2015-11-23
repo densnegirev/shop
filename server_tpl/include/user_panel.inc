@@ -4,7 +4,9 @@
 		<div id="username">
 			<a href="/profile">${USERNAME}</a>
 		</div>
-		<br />
+		<div id="usergroup" style="color: #${USERGROUPCOLOR}">
+			${USERGROUP}
+		</div>
 		<br />
 		<br />
 		<div id="trash">

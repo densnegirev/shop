@@ -2,6 +2,7 @@ package frontend;
 
 import main.AccountService;
 import main.Globals;
+import main.UserGroup;
 import main.UserProfile;
 import product.Item;
 import templater.PageGenerator;
@@ -58,8 +59,11 @@ public class Index extends HttpServlet {
 		if (accountService.getSessions(session.getId()) != null) {
 			Map<String, Object> pv = new HashMap<>();
 			UserProfile up = accountService.getSessions(session.getId());
+			UserGroup ug = Globals.DB_SERVICE.getGroup(up.getGroupID());
 
 			pv.put("USERNAME", up.getLogin());
+			pv.put("USERGROUP", ug.getName());
+			pv.put("USERGROUPCOLOR", ug.getColor());
 			header = PageGenerator.getPage("server_tpl/include/user_panel.inc", pv);
 		} else {
 			header = PageGenerator.getPage("server_tpl/include/login_panel.inc", pageVariables);

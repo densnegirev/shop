@@ -1,7 +1,8 @@
 package dbservice;
 
+import frontend.Index;
+import main.UserGroup;
 import main.UserProfile;
-
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
@@ -71,7 +72,8 @@ public class DBServiceFoxPro implements DBService {
 				Object addressObj = rs.getObject(9);
 				Object phoneObj = rs.getObject(10);
 
-				up.setID((Integer)rs.getObject(2));
+				up.setID((Integer)rs.getObject(1));
+				up.setGroupID((Integer) rs.getObject(2));
 				up.setLogin(rs.getObject(3).toString());
 				up.setPassword(rs.getObject(4).toString());
 				up.setFamiliya(familiyaObj == null ? "" : familiyaObj.toString());
@@ -135,6 +137,32 @@ public class DBServiceFoxPro implements DBService {
 		}
 
 		return true;
+	}
+
+	@Override
+	public UserGroup getGroup(int groupId) {
+		UserGroup ug = new UserGroup();
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT groups.name, groups.color FROM groups WHERE groups.group_id = " + groupId;
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				ug.setName(rs.getObject(1).toString());
+				ug.setColor(rs.getObject(2).toString());
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return ug;
 	}
 
 	@Override

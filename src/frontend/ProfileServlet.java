@@ -3,6 +3,7 @@ package frontend;
 import formvalidators.FormValidator;
 import main.AccountService;
 import main.Globals;
+import main.UserGroup;
 import main.UserProfile;
 import templater.PageGenerator;
 import javax.servlet.ServletException;
@@ -31,10 +32,13 @@ public class ProfileServlet extends HttpServlet {
 		response.setCharacterEncoding(Globals.ENCODING);
 		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Профиль");
 
-		if (accountService.getSessions(session.getId()) != null) {
-			UserProfile up = accountService.getSessions(session.getId());
+		UserProfile up = accountService.getSessions(session.getId());
+		UserGroup ug = Globals.DB_SERVICE.getGroup(up.getGroupID());
 
+		if (up != null) {
 			pageVariables.put("USERNAME", up.getLogin());
+			pageVariables.put("USERGROUP", ug.getName());
+			pageVariables.put("USERGROUPCOLOR", ug.getColor());
 			pageVariables.put("password", up.getPassword());
 			pageVariables.put("password_again", up.getPassword());
 			pageVariables.put("familiya", up.getFamiliya());
@@ -89,10 +93,13 @@ public class ProfileServlet extends HttpServlet {
 		} else {
 			Map<String, Object> pageVariables = new HashMap<>();
 			UserProfile up = accountService.getSessions(session.getId());
+			UserGroup ug = Globals.DB_SERVICE.getGroup(up.getGroupID());
 
 			errors = "<ul>" + errors + "</ul>";
 
 			pageVariables.put("USERNAME", up.getLogin());
+			pageVariables.put("USERGROUP", ug.getName());
+			pageVariables.put("USERGROUPCOLOR", ug.getColor());
 			pageVariables.put("password", up.getPassword());
 			pageVariables.put("password_again", up.getPassword());
 			pageVariables.put("familiya", up.getFamiliya());
