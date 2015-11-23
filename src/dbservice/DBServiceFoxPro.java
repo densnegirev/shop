@@ -2,7 +2,6 @@ package dbservice;
 
 import main.UserGroup;
 import main.UserProfile;
-import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import com.hxtt.sql.dbf.DBFDriver;
@@ -184,9 +183,9 @@ public class DBServiceFoxPro implements DBService {
 				String resolution = rs.getObject(6).toString();
 				String model = rs.getObject(7).toString();
 				int diagonal = (int)rs.getObject(8);
-				BigDecimal price = (BigDecimal)rs.getObject(9);
+				int price = (int)rs.getObject(9);
 
-				result.add(new Item(id, fabricName, fabricCountry, type, format, resolution, model, diagonal, price.doubleValue()));
+				result.add(new Item(id, fabricName, fabricCountry, type, format, resolution, model, diagonal, price));
 			}
 
 			rs.close();

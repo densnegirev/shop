@@ -9,9 +9,9 @@ public class Item {
 	private String resolution;
 	private String model;
 	private int diagonal;
-	private double price;
+	private int price;
 
-	public Item(int id, String fabricName, String fabricCountry, String type, String format, String resolution, String model, int diagonal, double price) {
+	public Item(int id, String fabricName, String fabricCountry, String type, String format, String resolution, String model, int diagonal, int price) {
 		this.id = id;
 		this.fabricName = fabricName;
 		this.fabricCountry = fabricCountry;
@@ -91,7 +91,7 @@ public class Item {
 		return price;
 	}
 
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 }

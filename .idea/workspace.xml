@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cdfaa-5b11-426f-a0ae-f3accb93a073" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBService.java" afterPath="$PROJECT_DIR$/src/dbservice/DBService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/fabricators.BAK" afterPath="$PROJECT_DIR$/db/fabricators.BAK" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/fabricators.CDX" afterPath="$PROJECT_DIR$/db/fabricators.CDX" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/fabricators.dbf" afterPath="$PROJECT_DIR$/db/fabricators.dbf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/items.BAK" afterPath="$PROJECT_DIR$/db/items.BAK" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/items.CDX" afterPath="$PROJECT_DIR$/db/items.CDX" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/items.dbf" afterPath="$PROJECT_DIR$/db/items.dbf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/resolutions.CDX" afterPath="$PROJECT_DIR$/db/resolutions.CDX" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/resolutions.dbf" afterPath="$PROJECT_DIR$/db/resolutions.dbf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/shop.DCT" afterPath="$PROJECT_DIR$/db/shop.DCT" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/shop.DCX" afterPath="$PROJECT_DIR$/db/shop.DCX" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/shop.dbc" afterPath="$PROJECT_DIR$/db/shop.dbc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/types.CDX" afterPath="$PROJECT_DIR$/db/types.CDX" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/types.dbf" afterPath="$PROJECT_DIR$/db/types.dbf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" afterPath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/Index.java" afterPath="$PROJECT_DIR$/src/frontend/Index.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\Dropbox\shop\src\product\Item.java" afterPath="$PROJECT_DIR$/src/shop/Item.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shop/Item.java" afterPath="$PROJECT_DIR$/src/shop/Item.java" />
     </list>
     <ignored path="shop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +49,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Index.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Index.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/frontend/Index.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7705314">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Catalog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shop/Catalog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfileServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/frontend/ProfileServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.09046455">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,11 +124,12 @@
         <option value="$PROJECT_DIR$/src/dbservice/DBService.java" />
         <option value="$PROJECT_DIR$/src/main/UserGroup.java" />
         <option value="$PROJECT_DIR$/src/main/UserProfile.java" />
-        <option value="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
         <option value="$PROJECT_DIR$/server_tpl/include/user_panel.inc" />
         <option value="$PROJECT_DIR$/src/frontend/ProfileServlet.java" />
         <option value="$PROJECT_DIR$/src/product/Catalog.java" />
         <option value="$PROJECT_DIR$/src/frontend/Index.java" />
+        <option value="$PROJECT_DIR$/src/shop/Item.java" />
+        <option value="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
       </list>
     </option>
   </component>
@@ -261,6 +292,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="dbservice" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shop" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server_tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -562,12 +625,12 @@
       <updated>1447244101632</updated>
       <workItem from="1447244102833" duration="16629000" />
       <workItem from="1447330525418" duration="18584000" />
-      <workItem from="1448273718083" duration="11839000" />
+      <workItem from="1448273718083" duration="15843000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47052000" />
+    <option name="totallyTimeSpent" value="51056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -581,7 +644,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1977507" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20712277" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24895833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -667,11 +730,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="SELECT group..groups..." />
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="SELECT group..groups..." />
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="SELECT items..items..." />
+            <marker date="1448287834689" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1448287834689" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
+            <marker date="1448287834689" expanded="true" signature="-1:-1" placeholder="SELECT group..groups..." />
+            <marker date="1448287834689" expanded="true" signature="-1:-1" placeholder="SELECT items..items..." />
           </folding>
         </state>
       </provider>
@@ -769,20 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server_tpl/include/products_table.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13301088">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server_tpl/include/products_table_row.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055137843">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/css/products.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5852479">
@@ -849,20 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40465793">
-          <caret line="75" column="57" selection-start-line="75" selection-start-column="57" selection-end-line="75" selection-end-column="57" />
-          <folding>
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="SELECT group..groups..." />
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="SELECT group..groups..." />
-            <marker date="1448286482284" expanded="true" signature="-1:-1" placeholder="SELECT items..items..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server_tpl/include/user_panel.inc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22027534">
@@ -872,14 +906,6 @@
       </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/SignUpServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51570046">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
@@ -906,34 +932,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4710145">
-          <caret line="93" column="37" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/templater/PageGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6111111">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/ProfileServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1594203">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/Catalog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07971015">
-          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -946,10 +948,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/SignUpServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.010869565">
+          <caret line="54" column="0" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/frontend/Index.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7705314">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="42" column="23" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4710145">
+          <caret line="93" column="29" selection-start-line="93" selection-start-column="29" selection-end-line="93" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_tpl/include/products_table_row.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.5172414">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_tpl/include/products_table.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13447432">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38141808">
+          <caret line="183" column="0" selection-start-line="183" selection-start-column="0" selection-end-line="183" selection-end-column="0" />
+          <folding>
+            <marker date="1448287834689" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1448287834689" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
+            <marker date="1448287834689" expanded="true" signature="-1:-1" placeholder="SELECT group..groups..." />
+            <marker date="1448287834689" expanded="true" signature="-1:-1" placeholder="SELECT items..items..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/Catalog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/ProfileServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09046455">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
