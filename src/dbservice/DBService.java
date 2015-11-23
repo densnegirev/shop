@@ -2,7 +2,7 @@ package dbservice;
 
 import main.UserGroup;
 import main.UserProfile;
-import product.Item;
+import shop.Item;
 import java.util.ArrayList;
 
 public interface DBService {

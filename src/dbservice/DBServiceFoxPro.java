@@ -1,13 +1,12 @@
 package dbservice;
 
-import frontend.Index;
 import main.UserGroup;
 import main.UserProfile;
 import java.math.BigDecimal;
 import java.sql.*;
 import java.util.ArrayList;
 import com.hxtt.sql.dbf.DBFDriver;
-import product.Item;
+import shop.Item;
 
 public class DBServiceFoxPro implements DBService {
 	private String url = "jdbc:DBF:///db";
