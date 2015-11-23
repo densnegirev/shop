@@ -27,6 +27,7 @@ public class Main {
 		Servlet logOut = new SignOutServlet(accountService);
 		Servlet index = new Index(accountService);
 		Servlet profile = new ProfileServlet(accountService);
+		Servlet trash = new TrashServlet(accountService);
 		ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 		
 		context.addServlet(new ServletHolder(signIn), "/signin");
@@ -34,6 +35,7 @@ public class Main {
 		context.addServlet(new ServletHolder(logOut), "/logout");
 		context.addServlet(new ServletHolder(index), "/index");
 		context.addServlet(new ServletHolder(profile), "/profile");
+		context.addServlet(new ServletHolder(trash), "/trash");
 
 		ResourceHandler resource_handler = new ResourceHandler();
 		HandlerList handlers = new HandlerList();

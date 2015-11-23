@@ -1,6 +1,6 @@
 <!-- products_table.inc BEGIN -->
 <div id="products">
-	<table id>
+	<table>
 		${rows}
 	</table>
 </div>

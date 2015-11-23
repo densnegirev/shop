@@ -33,9 +33,10 @@ public class ProfileServlet extends HttpServlet {
 		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Профиль");
 
 		UserProfile up = accountService.getSessions(session.getId());
-		UserGroup ug = Globals.DB_SERVICE.getGroup(up.getGroupID());
 
 		if (up != null) {
+			UserGroup ug = Globals.DB_SERVICE.getGroup(up.getGroupID());
+
 			pageVariables.put("USERNAME", up.getLogin());
 			pageVariables.put("USERGROUP", ug.getName());
 			pageVariables.put("USERGROUPCOLOR", ug.getColor());

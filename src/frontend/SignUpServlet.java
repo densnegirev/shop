@@ -38,16 +38,17 @@ public class SignUpServlet extends HttpServlet {
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// (id, group, login, password, familiya, imya, otchestvo, email, address, phone)
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
 		String passwordAgain = request.getParameter("password_again");
-		String email =  request.getParameter("email");
 		String familiya = request.getParameter("familiya");
 		String imya = request.getParameter("imya");
 		String otchestvo = request.getParameter("otchestvo");
-		String phone = request.getParameter("phone");
+		String email =  request.getParameter("email");
 		String address = request.getParameter("address");
-		UserProfile user = new UserProfile(login, password, email, familiya, imya, otchestvo, phone, address);
+		String phone = request.getParameter("phone");
+		UserProfile user = new UserProfile(login, password, familiya, imya, otchestvo, email, address, phone);
 		FormValidator[] validators = new FormValidator[] {
 				FormValidator.create(FormValidator.Types.LOGIN, login),
 				FormValidator.create(FormValidator.Types.PASSWORD, password)

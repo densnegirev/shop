@@ -25,8 +25,8 @@ public class DBServiceFoxPro implements DBService {
 
 	@Override
 	public boolean addUser(String userName, UserProfile userProfile) {
-		String sql1 = "INSERT INTO users (group_id, login, password, familiya, imya, otchestvo, email, address, phone) VALUES ('"
-				+ "1" + userName
+		String sql1 = "INSERT INTO users (group_id, login, password, familiya, imya, otchestvo, email, address, phone) VALUES ("
+				+ "1, '" + userName
 				+ "', '" + userProfile.getPassword()
 				+ "', '" + userProfile.getFamiliya()
 				+ "', '" + userProfile.getImya()
@@ -34,6 +34,9 @@ public class DBServiceFoxPro implements DBService {
 				+ "', '" + userProfile.getEmail()
 				+ "', '" + userProfile.getAddress()
 				+ "', '" + userProfile.getPhone() + "')";
+
+		System.out.println("SQL: " + sql1);
+
 		try {
 			con = DriverManager.getConnection(url, "", "");
 
@@ -62,7 +65,7 @@ public class DBServiceFoxPro implements DBService {
 			boolean found = false;
 
 			if (rs.next()) {
-				// (id, login, password, familiya, imya, otchestvo, email, address, phone)
+				// (id, group, login, password, familiya, imya, otchestvo, email, address, phone)
 				Object familiyaObj = rs.getObject(5);
 				Object imyaObj = rs.getObject(6);
 				Object otchestvoObj = rs.getObject(7);
@@ -71,7 +74,7 @@ public class DBServiceFoxPro implements DBService {
 				Object phoneObj = rs.getObject(10);
 
 				up.setID((Integer)rs.getObject(1));
-				up.setGroupID((Integer) rs.getObject(2));
+				up.setGroupID((Integer)rs.getObject(2));
 				up.setLogin(rs.getObject(3).toString());
 				up.setPassword(rs.getObject(4).toString());
 				up.setFamiliya(familiyaObj == null ? "" : familiyaObj.toString());
@@ -171,6 +174,41 @@ public class DBServiceFoxPro implements DBService {
 			con = DriverManager.getConnection(url, "", "");
 
 			String sql = "SELECT items.item_id, fabricators.name, fabricators.country, types.type, hdformats.hd_format, resolutions.resolution, items.model, items.diagonal, items.price FROM items, fabricators, types, hdformats, resolutions WHERE items.fabric_id = fabricators.fabric_id AND items.type_id = types.type_id AND items.format_id = hdformats.format_id AND items.resolution_id = resolutions.resolution_id";
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				int id = (int)rs.getObject(1);
+				String fabricName = rs.getObject(2).toString();
+				String fabricCountry = rs.getObject(3).toString();
+				String type = rs.getObject(4).toString();
+				String format = rs.getObject(5).toString();
+				String resolution = rs.getObject(6).toString();
+				String model = rs.getObject(7).toString();
+				int diagonal = (int)rs.getObject(8);
+				int price = (int)rs.getObject(9);
+
+				result.add(new Item(id, fabricName, fabricCountry, type, format, resolution, model, diagonal, price));
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	@Override
+	public ArrayList<Item> getTrashItems(int offset, int count) {
+		ArrayList<Item> result = new ArrayList<>();
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = ""; // TODO: query
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 

@@ -1,7 +1,8 @@
-<!-- products_table_row.inc BEGIN -->
+<!-- products_table_row2.inc BEGIN -->
 <tr>
-	<td class="preview"><img src="${image}" /></td>
+	<td class="preview2"><img src="${image}" /></td>
 	<td>
+		<!--
 		<ul>
 			<li>Изготовитель: ${fabricName}</li>
 			<li>Страна: ${fabricCountry}</li>
@@ -12,6 +13,7 @@
 			<li>Диагональ: ${diagonal}</li>
 			<li>Цена: ${price}</li>
 		</ul>
+		-->
 	</td>
 </tr>
-<!-- products_table_row.inc END -->
+<!-- products_table_row2.inc END -->

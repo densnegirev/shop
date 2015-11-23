@@ -13,4 +13,5 @@ public interface DBService {
 	UserGroup getGroup(int groupId);
 
 	ArrayList<Item> getItems(int offset, int count);
+	ArrayList<Item> getTrashItems(int offset, int count);
 }
