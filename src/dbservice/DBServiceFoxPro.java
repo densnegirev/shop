@@ -26,8 +26,8 @@ public class DBServiceFoxPro implements DBService {
 
 	@Override
 	public boolean addUser(String userName, UserProfile userProfile) {
-		String sql1 = "INSERT INTO users (login, password, familiya, imya, otchestvo, email, address, phone) VALUES ('"
-				+ userName
+		String sql1 = "INSERT INTO users (group_id, login, password, familiya, imya, otchestvo, email, address, phone) VALUES ('"
+				+ "1" + userName
 				+ "', '" + userProfile.getPassword()
 				+ "', '" + userProfile.getFamiliya()
 				+ "', '" + userProfile.getImya()
@@ -64,16 +64,16 @@ public class DBServiceFoxPro implements DBService {
 
 			if (rs.next()) {
 				// (id, login, password, familiya, imya, otchestvo, email, address, phone)
-				Object familiyaObj = rs.getObject(4);
-				Object imyaObj = rs.getObject(5);
-				Object otchestvoObj = rs.getObject(6);
-				Object emailObj = rs.getObject(7);
-				Object addressObj = rs.getObject(8);
-				Object phoneObj = rs.getObject(9);
+				Object familiyaObj = rs.getObject(5);
+				Object imyaObj = rs.getObject(6);
+				Object otchestvoObj = rs.getObject(7);
+				Object emailObj = rs.getObject(8);
+				Object addressObj = rs.getObject(9);
+				Object phoneObj = rs.getObject(10);
 
-				up.setID((Integer)rs.getObject(1));
-				up.setLogin(rs.getObject(2).toString());
-				up.setPassword(rs.getObject(3).toString());
+				up.setID((Integer)rs.getObject(2));
+				up.setLogin(rs.getObject(3).toString());
+				up.setPassword(rs.getObject(4).toString());
 				up.setFamiliya(familiyaObj == null ? "" : familiyaObj.toString());
 				up.setImya(imyaObj == null ? "" : imyaObj.toString());
 				up.setOtchestvo(otchestvoObj == null ? "" : otchestvoObj.toString());
@@ -144,7 +144,7 @@ public class DBServiceFoxPro implements DBService {
 		try {
 			con = DriverManager.getConnection(url, "", "");
 
-			String sql = "SELECT items.item_id, fabricators.name, fabricators.country, types.type, hdforrmats.hd_format, resolution.resolution, items.model, items.diagonal, items.price FROM items, fabricators, types, hdforrmats, resolution WHERE items.fabric_id = fabricators.fabric_id AND items.type_id = types.type_id AND items.format_id = hdforrmats.format_id AND items.resolution_id = resolution.resolution_id";
+			String sql = "SELECT items.item_id, fabricators.name, fabricators.country, types.type, hdformats.hd_format, resolutions.resolution, items.model, items.diagonal, items.price FROM items, fabricators, types, hdformats, resolutions WHERE items.fabric_id = fabricators.fabric_id AND items.type_id = types.type_id AND items.format_id = hdformats.format_id AND items.resolution_id = resolutions.resolution_id";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 

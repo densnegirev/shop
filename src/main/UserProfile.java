@@ -2,6 +2,7 @@ package main;
 
 public class UserProfile {
 	private Integer id;
+	private Integer groupId;
 	private String login;
 	private String password;
 	private String familiya;
@@ -40,6 +41,14 @@ public class UserProfile {
 
 	public void setID(Integer id) {
 		this.id = id;
+	}
+
+	public Integer getGroupID() {
+		return groupId;
+	}
+
+	public void setGroupID(Integer id) {
+		this.groupId = id;
 	}
 
 	public String getLogin() {

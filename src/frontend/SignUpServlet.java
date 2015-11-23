@@ -49,8 +49,8 @@ public class SignUpServlet extends HttpServlet {
 		String address = request.getParameter("address");
 		UserProfile user = new UserProfile(login, password, email, familiya, imya, otchestvo, phone, address);
 		FormValidator[] validators = new FormValidator[] {
-				FormValidator.create(FormValidator.Types.LOGIN, login, "Логин должен состоять хотя бы из трех символов"),
-				FormValidator.create(FormValidator.Types.PASSWORD, password, "Пароль должен быть длинной не менее 8 символов")
+				FormValidator.create(FormValidator.Types.LOGIN, login),
+				FormValidator.create(FormValidator.Types.PASSWORD, password)
 		};
 
 		errors = "";

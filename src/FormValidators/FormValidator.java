@@ -2,7 +2,6 @@ package formvalidators;
 
 public abstract class FormValidator {
 	protected String value;
-	protected String errorMsg;
 
 	public enum Types {
 		LOGIN,
@@ -10,26 +9,23 @@ public abstract class FormValidator {
 	}
 
 	public abstract boolean validate();
+	public abstract String getErrorMsg();
 
-	public static FormValidator create(Types type, String value, String errorMsg) {
+	public static FormValidator create(Types type, String value) {
 		FormValidator result = null;
 
 		switch (type) {
 			case LOGIN:
-				result = new LoginValidator(value, errorMsg);
+				result = new LoginValidator(value);
 
 				break;
 
 			case PASSWORD:
-				result = new PasswordValidator(value, errorMsg);
+				result = new PasswordValidator(value);
 
 				break;
 		}
 
 		return result;
-	}
-
-	public String getErrorMsg() {
-		return errorMsg;
 	}
 }
