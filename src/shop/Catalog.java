@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Catalog {
-	public String getContent(int page, int cnt) {
+	public String getContent() {
 		Map<String, Object> pageVariables = new HashMap<>();
-		ArrayList<Item> items = Globals.DB_SERVICE.getItems(page, cnt);
+		ArrayList<Item> items = Globals.DB_SERVICE.getItems();
 		String rows = "";
 
 		for (int i = 0; i < items.size(); ++i) {

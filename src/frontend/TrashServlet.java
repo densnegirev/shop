@@ -1,11 +1,5 @@
 package frontend;
 
-import main.AccountService;
-import main.Globals;
-import main.UserGroup;
-import main.UserProfile;
-import shop.Trash;
-import templater.PageGenerator;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,40 +8,55 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import main.Globals;
+import main.UserGroup;
+import main.UserProfile;
+import templater.PageGenerator;
 
 public class TrashServlet extends HttpServlet {
-	private AccountService accountService;
-
-	public TrashServlet(AccountService accountService) {
-		this.accountService = accountService;
-	}
-
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+
+		if (Globals.ACCOUNT_SERVICE.getSessions(session.getId()) == null) {
+			response.sendRedirect("/index");
+		}
+
 		Map<String, Object> pageVariables = new HashMap<>();
-		Trash trash = new Trash();
-		String header;
+		UserProfile up = Globals.ACCOUNT_SERVICE.getSessions(session.getId());
+		UserGroup ug = Globals.DB_SERVICE.getGroup(up.getGroupID());
+		String action = request.getParameter("action");
+		String itemId = request.getParameter("itemid");
+
+		if (action != null && itemId != null) {
+			int itemIdNum = Integer.parseInt(itemId);
+
+			if (action.equals("add")) {
+				Globals.TRASH.addItem(up.getId(), itemIdNum, 1);
+			} else if (action.equals("delete")) {
+				Globals.TRASH.deleteItem(up.getId(), itemIdNum);
+			}
+
+			response.sendRedirect("/index");
+		}
 
 		response.setContentType("text/html");
 		response.setCharacterEncoding(Globals.ENCODING);
-		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Главная");
-		pageVariables.put("CONTENT", trash.getContent(0, 0));
+		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Корзина");
 
-		if (accountService.getSessions(session.getId()) != null) {
-			Map<String, Object> pv = new HashMap<>();
-			UserProfile up = accountService.getSessions(session.getId());
-			UserGroup ug = Globals.DB_SERVICE.getGroup(up.getGroupID());
+		pageVariables.put("USERNAME", up.getLogin());
+		pageVariables.put("USERGROUP", ug.getName());
+		pageVariables.put("USERGROUPCOLOR", ug.getColor());
 
-			pv.put("USERNAME", up.getLogin());
-			pv.put("USERGROUP", ug.getName());
-			pv.put("USERGROUPCOLOR", ug.getColor());
-			header = PageGenerator.getPage("server_tpl/include/user_panel.inc", pv);
-		} else {
-			header = PageGenerator.getPage("server_tpl/include/login_panel.inc", pageVariables);
-		}
+		String header = PageGenerator.getPage("server_tpl/include/user_panel.inc", pageVariables);
 
+		pageVariables.put("CONTENT", Globals.TRASH.getContent(up.getId()));
 		pageVariables.put("HEADER", header);
 		response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
 		response.setStatus(HttpServletResponse.SC_OK);
 	}
+	/*
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	}
+	*/
 }

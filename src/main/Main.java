@@ -21,13 +21,12 @@ public class Main {
 
 		System.out.append("Starting at port: ").append(String.valueOf(port)).append('\n');
 
-		AccountService accountService = new AccountService(Globals.DB_SERVICE);
-		Servlet signIn = new SignInServlet(accountService);
-		Servlet signUp = new SignUpServlet(accountService);
-		Servlet logOut = new SignOutServlet(accountService);
-		Servlet index = new Index(accountService);
-		Servlet profile = new ProfileServlet(accountService);
-		Servlet trash = new TrashServlet(accountService);
+		Servlet signIn = new SignInServlet();
+		Servlet signUp = new SignUpServlet();
+		Servlet logOut = new SignOutServlet();
+		Servlet index = new Index();
+		Servlet profile = new ProfileServlet();
+		Servlet trash = new TrashServlet();
 		ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 		
 		context.addServlet(new ServletHolder(signIn), "/signin");

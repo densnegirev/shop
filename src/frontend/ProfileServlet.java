@@ -1,11 +1,5 @@
 package frontend;
 
-import formvalidators.FormValidator;
-import main.AccountService;
-import main.Globals;
-import main.UserGroup;
-import main.UserProfile;
-import templater.PageGenerator;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,52 +8,32 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import formvalidators.FormValidator;
+import main.Globals;
+import main.UserProfile;
+import templater.PageBuilder;
+import templater.PageGenerator;
 
 public class ProfileServlet extends HttpServlet {
-	private AccountService accountService;
 	private String errors;
 
-	public ProfileServlet(AccountService accountService) {
-		this.accountService = accountService;
+	public ProfileServlet() {
+		errors = "";
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Map<String, Object> pageVariables = new HashMap<>();
-		HttpSession session = request.getSession();
-		String content;
-		String header;
+		PageBuilder pageBuilder = new PageBuilder(request, response);
+		String content = getContent(request);
 
-		response.setCharacterEncoding(Globals.ENCODING);
-		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Профиль");
-
-		UserProfile up = accountService.getSessions(session.getId());
-
-		if (up != null) {
-			UserGroup ug = Globals.DB_SERVICE.getGroup(up.getGroupID());
-
-			pageVariables.put("USERNAME", up.getLogin());
-			pageVariables.put("USERGROUP", ug.getName());
-			pageVariables.put("USERGROUPCOLOR", ug.getColor());
-			pageVariables.put("password", up.getPassword());
-			pageVariables.put("password_again", up.getPassword());
-			pageVariables.put("familiya", up.getFamiliya());
-			pageVariables.put("imya", up.getImya());
-			pageVariables.put("otchestvo", up.getOtchestvo());
-			pageVariables.put("email", up.getEmail());
-			pageVariables.put("address", up.getAddress());
-			pageVariables.put("phone", up.getPhone());
-			pageVariables.put("errors", "");
-
-			header = PageGenerator.getPage("server_tpl/include/user_panel.inc", pageVariables);
-			content = PageGenerator.getPage("server_tpl/include/profile_panel.inc", pageVariables);
-
-			pageVariables.put("HEADER", header);
-			pageVariables.put("CONTENT", content);
-			response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
-			response.setStatus(HttpServletResponse.SC_OK);
-		} else {
+		if (content.length() == 0) {
 			response.sendRedirect("/index");
 		}
+
+		pageBuilder.setTitle(Globals.SITE_TITLE + " | Профиль");
+		pageBuilder.setContent(content);
+		pageBuilder.buildPage();
+
+		errors = "";
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -89,18 +63,21 @@ public class ProfileServlet extends HttpServlet {
 		}
 
 		if (errors.length() == 0) {
-			accountService.updateUser(session.getId(), password, familiya, imya, otchestvo, email, address, phone);
+			Globals.ACCOUNT_SERVICE.updateUser(session.getId(), password, familiya, imya, otchestvo, email, address, phone);
 			response.sendRedirect("/index");
 		} else {
-			Map<String, Object> pageVariables = new HashMap<>();
-			UserProfile up = accountService.getSessions(session.getId());
-			UserGroup ug = Globals.DB_SERVICE.getGroup(up.getGroupID());
-
 			errors = "<ul>" + errors + "</ul>";
 
-			pageVariables.put("USERNAME", up.getLogin());
-			pageVariables.put("USERGROUP", ug.getName());
-			pageVariables.put("USERGROUPCOLOR", ug.getColor());
+			response.sendRedirect("/profile");
+		}
+	}
+
+	private String getContent(HttpServletRequest request) {
+		Map<String, Object> pageVariables = new HashMap<>();
+		HttpSession session = request.getSession();
+		UserProfile up = Globals.ACCOUNT_SERVICE.getSessions(session.getId());
+
+		if (up != null) {
 			pageVariables.put("password", up.getPassword());
 			pageVariables.put("password_again", up.getPassword());
 			pageVariables.put("familiya", up.getFamiliya());
@@ -111,16 +88,9 @@ public class ProfileServlet extends HttpServlet {
 			pageVariables.put("phone", up.getPhone());
 			pageVariables.put("errors", errors);
 
-			String header = PageGenerator.getPage("server_tpl/include/user_panel.inc", pageVariables);
-			String content = PageGenerator.getPage("server_tpl/include/profile_panel.inc", pageVariables);
-
-			pageVariables.put("CONTENT", content);
-			pageVariables.put("TITLE", Globals.SITE_TITLE + " | Профиль");
-			pageVariables.put("HEADER", header);
-
-			response.setCharacterEncoding(Globals.ENCODING);
-			response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
-			response.setStatus(HttpServletResponse.SC_OK);
+			return PageGenerator.getPage("server_tpl/include/profile_panel.inc", pageVariables);
 		}
+
+		return "";
 	}
 }

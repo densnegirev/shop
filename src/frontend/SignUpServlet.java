@@ -1,10 +1,5 @@
 package frontend;
 
-import formvalidators.FormValidator;
-import main.AccountService;
-import main.Globals;
-import main.UserProfile;
-import templater.PageGenerator;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,33 +7,30 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import formvalidators.FormValidator;
+import main.Globals;
+import main.UserProfile;
+import templater.PageBuilder;
+import templater.PageGenerator;
 
 public class SignUpServlet extends HttpServlet {
-	private AccountService accountService;
 	private String errors;
 
-	public SignUpServlet(AccountService accountService) {
-		this.accountService = accountService;
+	public SignUpServlet() {
 		this.errors = "";
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Map<String, Object> pageVariables = new HashMap<>();
+		PageBuilder pageBuilder = new PageBuilder(request, response);
 
-		pageVariables.put("errors", "");
+		pageBuilder.setTitle(Globals.SITE_TITLE + " | Регистрация");
+		pageBuilder.setContent(getContent());
+		pageBuilder.buildPage();
 
-		String content = PageGenerator.getPage("server_tpl/include/signup_panel.inc", pageVariables);
-
-		pageVariables.put("CONTENT", content);
-		pageVariables.put("TITLE", Globals.SITE_TITLE + " | Регистрация");
-		pageVariables.put("HEADER", "");
-		response.setCharacterEncoding(Globals.ENCODING);
-		response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
-		response.setStatus(HttpServletResponse.SC_OK);
+		errors = "";
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// (id, group, login, password, familiya, imya, otchestvo, email, address, phone)
 		String login = request.getParameter("login");
 		String password = request.getParameter("password");
 		String passwordAgain = request.getParameter("password_again");
@@ -67,26 +59,22 @@ public class SignUpServlet extends HttpServlet {
 		}
 
 		if (errors.length() == 0) {
-			accountService.addUser(login, user);
+			Globals.ACCOUNT_SERVICE.addUser(login, user);
 			response.sendRedirect("/index");
 
 			System.out.println("Reg: " + login + " " + password);
 		} else {
-			Map<String, Object> pageVariables = new HashMap<>();
-
 			errors = "<ul>" + errors + "</ul>";
 
-			pageVariables.put("errors", errors);
-
-			String content = PageGenerator.getPage("server_tpl/include/signup_panel.inc", pageVariables);
-
-			pageVariables.put("CONTENT", content);
-			pageVariables.put("TITLE", Globals.SITE_TITLE + " | Регистрация");
-			pageVariables.put("HEADER", "");
-
-			response.setCharacterEncoding(Globals.ENCODING);
-			response.getWriter().println(PageGenerator.getPage("server_tpl/index.html", pageVariables));
-			response.setStatus(HttpServletResponse.SC_OK);
+			response.sendRedirect("/signup");
 		}
+	}
+
+	private String getContent() {
+		Map<String, Object> pageVariables = new HashMap<>();
+
+		pageVariables.put("errors", errors);
+
+		return PageGenerator.getPage("server_tpl/include/signup_panel.inc", pageVariables);
 	}
 }
