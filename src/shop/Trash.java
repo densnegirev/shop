@@ -46,6 +46,22 @@ public class Trash {
 		}
 	}
 
+	public int getItemAmount(int userId, int itemId) {
+		LinkedList<TrashItem> userItems = items.get(userId);
+
+		if (userItems == null) {
+			return 0;
+		}
+
+		for (TrashItem item : userItems) {
+			if (item.getItemId() == itemId) {
+				return item.getAmount();
+			}
+		}
+
+		return 0;
+	}
+
 	public String getContent(int userId) {
 		LinkedList<TrashItem> userItems = items.get(userId);
 

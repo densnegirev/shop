@@ -35,13 +35,23 @@ public class TrashServlet extends HttpServlet {
 		String amount = request.getParameter("amount");
 
 		if (up != null && action != null && itemId != null && amount != null) {
+			int userId = up.getId();
 			int itemIdNum = Integer.parseInt(itemId);
 			int amountNum = Integer.parseInt(amount);
 
 			if (action.equals("add")) {
-				Globals.TRASH.addItem(up.getId(), itemIdNum, amountNum);
+				int itemCount = Globals.DB_SERVICE.getItem(itemIdNum).getCount();
+				int rem = itemCount - Globals.TRASH.getItemAmount(userId, itemIdNum) - amountNum;
+
+				if (rem >= 0 && rem < itemCount) {
+					Globals.TRASH.addItem(userId, itemIdNum, amountNum);
+
+					System.out.println("Added item to trash: " + itemIdNum + " (amount: " + amountNum + ")");
+				} else {
+					System.out.println("ERROR: Out of stock: " + itemIdNum);
+				}
 			} else if (action.equals("delete")) {
-				Globals.TRASH.deleteItem(up.getId(), itemIdNum);
+				Globals.TRASH.deleteItem(userId, itemIdNum);
 			}
 		}
 

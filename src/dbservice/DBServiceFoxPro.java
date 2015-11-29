@@ -201,4 +201,40 @@ public class DBServiceFoxPro implements DBService {
 
 		return result;
 	}
+
+	@Override
+	public Item getItem(int itemId) {
+		Item item = null;
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT items.item_id, fabricators.name, fabricators.country, types.type, hdformats.hd_format, resolutions.resolution, items.model, items.diagonal, items.price, items.count FROM items, fabricators, types, hdformats, resolutions WHERE items.fabric_id = fabricators.fabric_id AND items.type_id = types.type_id AND items.format_id = hdformats.format_id AND items.resolution_id = resolutions.resolution_id AND items.item_id = " + itemId;
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				int id = (int)rs.getObject(1);
+				String fabricName = rs.getObject(2).toString();
+				String fabricCountry = rs.getObject(3).toString();
+				String type = rs.getObject(4).toString();
+				String format = rs.getObject(5).toString();
+				String resolution = rs.getObject(6).toString();
+				String model = rs.getObject(7).toString();
+				int diagonal = (int)rs.getObject(8);
+				int price = (int)rs.getObject(9);
+				int count = (int)rs.getObject(10);
+
+				item = new Item(id, fabricName, fabricCountry, type, format, resolution, model, diagonal, price, count);
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return item;
+	}
 }

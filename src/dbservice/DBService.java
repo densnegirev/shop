@@ -13,4 +13,5 @@ public interface DBService {
 	UserGroup getGroup(int groupId);
 
 	ArrayList<Item> getItems();
+	Item getItem(int itemId);
 }
