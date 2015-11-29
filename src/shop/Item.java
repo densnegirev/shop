@@ -10,8 +10,9 @@ public class Item {
 	private String model;
 	private int diagonal;
 	private int price;
+	private int count;
 
-	public Item(int id, String fabricName, String fabricCountry, String type, String format, String resolution, String model, int diagonal, int price) {
+	public Item(int id, String fabricName, String fabricCountry, String type, String format, String resolution, String model, int diagonal, int price, int count) {
 		this.id = id;
 		this.fabricName = fabricName;
 		this.fabricCountry = fabricCountry;
@@ -21,6 +22,7 @@ public class Item {
 		this.model = model;
 		this.diagonal = diagonal;
 		this.price = price;
+		this.count = count;
 	}
 
 	public int getId() {
@@ -87,11 +89,19 @@ public class Item {
 		this.diagonal = diagonal;
 	}
 
-	public double getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
 	public void setPrice(int price) {
 		this.price = price;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 }

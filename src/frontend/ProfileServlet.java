@@ -27,6 +27,8 @@ public class ProfileServlet extends HttpServlet {
 
 		if (content.length() == 0) {
 			response.sendRedirect("/index");
+
+			return;
 		}
 
 		pageBuilder.setTitle(Globals.SITE_TITLE + " | Профиль");

@@ -1,7 +1,5 @@
 <!-- products_table.inc BEGIN -->
-<div id="products">
-	<table>
-		${rows}
-	</table>
-</div>
+<table class="productsTab">
+	${rows}
+</table>
 <!-- products_table.inc END -->

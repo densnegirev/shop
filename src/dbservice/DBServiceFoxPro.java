@@ -173,7 +173,7 @@ public class DBServiceFoxPro implements DBService {
 		try {
 			con = DriverManager.getConnection(url, "", "");
 
-			String sql = "SELECT items.item_id, fabricators.name, fabricators.country, types.type, hdformats.hd_format, resolutions.resolution, items.model, items.diagonal, items.price FROM items, fabricators, types, hdformats, resolutions WHERE items.fabric_id = fabricators.fabric_id AND items.type_id = types.type_id AND items.format_id = hdformats.format_id AND items.resolution_id = resolutions.resolution_id";
+			String sql = "SELECT items.item_id, fabricators.name, fabricators.country, types.type, hdformats.hd_format, resolutions.resolution, items.model, items.diagonal, items.price, items.count FROM items, fabricators, types, hdformats, resolutions WHERE items.fabric_id = fabricators.fabric_id AND items.type_id = types.type_id AND items.format_id = hdformats.format_id AND items.resolution_id = resolutions.resolution_id";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 
@@ -187,8 +187,9 @@ public class DBServiceFoxPro implements DBService {
 				String model = rs.getObject(7).toString();
 				int diagonal = (int)rs.getObject(8);
 				int price = (int)rs.getObject(9);
+				int count = (int)rs.getObject(10);
 
-				result.add(new Item(id, fabricName, fabricCountry, type, format, resolution, model, diagonal, price));
+				result.add(new Item(id, fabricName, fabricCountry, type, format, resolution, model, diagonal, price, count));
 			}
 
 			rs.close();

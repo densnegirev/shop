@@ -24,6 +24,15 @@ public class Catalog {
 			pageVariables.put("model", item.getModel());
 			pageVariables.put("diagonal", item.getDiagonal());
 			pageVariables.put("price", item.getPrice());
+			pageVariables.put("itemId", item.getId());
+
+			if (item.getCount() == 0) {
+				pageVariables.put("countColor", "notAvailable");
+				pageVariables.put("count", "Нет в наличии");
+			} else {
+				pageVariables.put("countColor", "available");
+				pageVariables.put("count", "В наличии: " + item.getCount());
+			}
 
 			rows += PageGenerator.getPage("server_tpl/include/products_table_row.inc", pageVariables);
 		}

@@ -1,27 +1,63 @@
-#products table
+table.productsTab
 {
 	width: 100%;
 	border-collapse: collapse;
 	background: #ccc;
 }
 
-#products table, #products tr, #products td
+table.productsTab tr, table.productsTab td
 {
 	border: 1px solid black;
 }
 
-#products td.preview
+td.preview
 {
 	width: 256px;
 }
 
-#products td.preview2
-{
-	width: 64px;
-}
-
-#products img
+table.productsTab img
 {
 	width: 100%;
 	display: block;
+}
+
+div.available
+{
+	color: #090;
+}
+
+div.notAvailable
+{
+	color: #900;
+}
+
+table.trashTab
+{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+table.trashTab tr, table.trashTab td
+{
+	border: 0px solid black;
+}
+
+table.trashTab td.count
+{
+	text-align: center;
+}
+
+table.trashTab td.amount
+{
+	width: 32px;
+}
+
+table.trashTab td.amount input
+{
+	width: 32px;
+}
+
+table.trashTab td.toTrash
+{
+	width: 92px;
 }
