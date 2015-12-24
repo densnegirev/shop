@@ -1,7 +1,11 @@
 package shop;
 
+import main.Globals;
+import templater.PageGenerator;
+
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 public class Trash {
 	private HashMap<Integer, LinkedList<TrashItem>> items;
@@ -64,41 +68,31 @@ public class Trash {
 
 	public String getContent(int userId) {
 		LinkedList<TrashItem> userItems = items.get(userId);
+		Map<String, Object> pv = new HashMap<>();
 
 		if (userItems != null && !userItems.isEmpty()) {
-			String result = "";
+			String rows = "";
+			int totalSum = 0;
 
-			for (TrashItem item : userItems) {
-				result = result + item.getItemId() + " : " + item.getAmount() + "<br />";
+			for (TrashItem trashItem : userItems) {
+				Item item = Globals.DB_SERVICE.getItem(trashItem.getItemId());
+
+				pv.put("image", "images/items/" + item.getId() + ".png");
+				pv.put("model", item.getModel());
+				pv.put("amount", trashItem.getAmount());
+				pv.put("price", item.getPrice());
+				pv.put("itemId", item.getId());
+
+				rows += PageGenerator.getPage("server_tpl/include/trash_table_row.inc", pv);
+				totalSum += item.getPrice();
 			}
 
-			return result;
+			rows += "<tr><td class=\"right\" colspan=\"4\">Итого: " + totalSum + "&nbsp;</td><td></td></tr>";
+
+			pv.put("rows", rows);
+
+			return PageGenerator.getPage("server_tpl/include/trash_table.inc", pv);
 		}
-		/*
-		Map<String, Object> pageVariables = new HashMap<>();
-		ArrayList<Item> items = Globals.DB_SERVICE.getTrashItems(page, cnt);
-		String rows = "";
-
-		for (int i = 0; i < items.size(); ++i) {
-			Item item = items.get(i);
-
-			pageVariables.put("image", "images/items/" + item.getId() + ".png");
-			pageVariables.put("fabricName", item.getFabricName());
-			pageVariables.put("fabricCountry", item.getFabricCountry());
-			pageVariables.put("type", item.getType());
-			pageVariables.put("format", item.getFormat());
-			pageVariables.put("resolution", item.getResolution());
-			pageVariables.put("model", item.getModel());
-			pageVariables.put("diagonal", item.getDiagonal());
-			pageVariables.put("price", item.getPrice());
-
-			rows += PageGenerator.getPage("server_tpl/include/products_table_row.inc", pageVariables);
-		}
-
-		pageVariables.put("rows", rows);
-
-		return PageGenerator.getPage("server_tpl/include/products_table.inc", pageVariables);
-		*/
 
 		return "Нет товаров";
 	}

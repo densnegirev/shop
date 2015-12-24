@@ -34,12 +34,12 @@ public class TrashServlet extends HttpServlet {
 		String itemId = request.getParameter("itemid");
 		String amount = request.getParameter("amount");
 
-		if (up != null && action != null && itemId != null && amount != null) {
+		if (up != null && action != null && itemId != null) {
 			int userId = up.getId();
 			int itemIdNum = Integer.parseInt(itemId);
-			int amountNum = Integer.parseInt(amount);
 
-			if (action.equals("add")) {
+			if (action.equals("add") && amount != null) {
+				int amountNum = Integer.parseInt(amount);
 				int itemCount = Globals.DB_SERVICE.getItem(itemIdNum).getCount();
 				int rem = itemCount - Globals.TRASH.getItemAmount(userId, itemIdNum) - amountNum;
 
@@ -52,6 +52,10 @@ public class TrashServlet extends HttpServlet {
 				}
 			} else if (action.equals("delete")) {
 				Globals.TRASH.deleteItem(userId, itemIdNum);
+
+				response.sendRedirect("/trash");
+
+				return;
 			}
 		}
 

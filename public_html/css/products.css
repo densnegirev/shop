@@ -15,6 +15,21 @@ td.preview
 	width: 256px;
 }
 
+td.preview_small
+{
+	width: 64px;
+}
+
+td.center
+{
+	text-align: center;
+}
+
+td.right
+{
+	text-align: right;
+}
+
 table.productsTab img
 {
 	width: 100%;
