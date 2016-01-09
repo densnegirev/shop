@@ -246,8 +246,7 @@ public class DBServiceFoxPro implements DBService {
 		int formatId = getFormatId(hdFormat);
 		int resolutionId = getResolutionId(resolution);
 
-		String sql = "INSERT INTO items (fabric_id, type_id, format_id, resolution_id, model, diagonal, price, count) " +
-				"VALUES (" +
+		String sql = "INSERT INTO items (fabric_id, type_id, format_id, resolution_id, model, diagonal, price, count) VALUES (" +
 				fabricId +
 				typeId +
 				formatId +
@@ -256,6 +255,18 @@ public class DBServiceFoxPro implements DBService {
 				diagonal +
 				price +
 				count + ")";
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			Statement stmt = con.createStatement();
+
+			stmt.executeUpdate(sql);
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -265,22 +276,210 @@ public class DBServiceFoxPro implements DBService {
 
 	@Override
 	public void deleteItem(String itemId) {
+		String sql = "DELETE FROM items WHERE items.item_id = " + itemId;
 
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			Statement stmt = con.createStatement();
+
+			stmt.executeUpdate(sql);
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private int getFabricId(String name, String country) {
-		return -1;
+		int res = getFabricIdHelper(name, country);
+
+		if (res == -1) {
+			String sql = "INSERT INTO fabricators (name, country) VALUES ('" + name + "', '" + country + "')";
+
+			try {
+				con = DriverManager.getConnection(url, "", "");
+
+				Statement stmt = con.createStatement();
+
+				stmt.executeUpdate(sql);
+				stmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			res = getFabricIdHelper(name, country);
+		}
+
+		return res;
+	}
+
+	private int getFabricIdHelper(String name, String country) {
+		int res = -1;
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT fabricators.fabric_id FROM fabricators WHERE fabricators.name = '" + name + "' AND fabricators.country = '" + country + "'";
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				res = (int)rs.getObject(1);
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 
 	private int getTypeId(String value) {
-		return -1;
+		int res = getTypeIdHelper(value);
+
+		if (res == -1) {
+			String sql = "INSERT INTO types (type) VALUES ('" + value + "')";
+
+			try {
+				con = DriverManager.getConnection(url, "", "");
+
+				Statement stmt = con.createStatement();
+
+				stmt.executeUpdate(sql);
+				stmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			res = getTypeIdHelper(value);
+		}
+
+		return res;
+	}
+
+	private int getTypeIdHelper(String value) {
+		int res = -1;
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT types.type_id FROM types WHERE types.type = '" + value + "'";
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				res = (int)rs.getObject(1);
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 
 	private int getFormatId(String value) {
-		return -1;
+		int res = getFormatIdHelper(value);
+
+		if (res == -1) {
+			String sql = "INSERT INTO hdformats (hd_format) VALUES ('" + value + "')";
+
+			try {
+				con = DriverManager.getConnection(url, "", "");
+
+				Statement stmt = con.createStatement();
+
+				stmt.executeUpdate(sql);
+				stmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			res = getFormatIdHelper(value);
+		}
+
+		return res;
+	}
+
+	private int getFormatIdHelper(String value) {
+		int res = -1;
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT hdformats.format_id FROM hdformats WHERE hdformats.hd_format = '" + value + "'";
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				res = (int)rs.getObject(1);
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 
 	private int getResolutionId(String value) {
-		return -1;
+		int res = getFormatIdHelper(value);
+
+		if (res == -1) {
+			String sql = "INSERT INTO resolutions (resolution) VALUES ('" + value + "')";
+
+			try {
+				con = DriverManager.getConnection(url, "", "");
+
+				Statement stmt = con.createStatement();
+
+				stmt.executeUpdate(sql);
+				stmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+
+			res = getResolutionIdHelper(value);
+		}
+
+		return res;
+	}
+
+	private int getResolutionIdHelper(String value) {
+		int res = -1;
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT resolutions.resolution_id FROM resolutions WHERE resolutions.resolution = '" + value + "'";
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				res = (int)rs.getObject(1);
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 }
