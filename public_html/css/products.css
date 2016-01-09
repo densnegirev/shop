@@ -76,3 +76,8 @@ table.trashTab td.toTrash
 {
 	width: 92px;
 }
+
+table.catalogSubTab tr, table.catalogSubTab td
+{
+	border: 0px solid black;
+}
