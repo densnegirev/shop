@@ -14,4 +14,8 @@ public interface DBService {
 
 	ArrayList<Item> getItems();
 	Item getItem(int itemId);
+
+	void addItem(String fabricName, String fabricCountry, String type, String hdFormat, String resolution, String model, String diagonal, String price, String count);
+	void updateItem(String itemId, String fabricName, String fabricCountry, String type, String hdFormat, String resolution, String model, String diagonal, String price, String count);
+	void deleteItem(String itemId);
 }

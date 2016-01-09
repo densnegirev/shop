@@ -29,6 +29,48 @@ public class AdminServlet extends HttpServlet {
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String addPar = request.getParameter("add");
+		String editPar = request.getParameter("edit");
+		String deletePar = request.getParameter("delete");
 
+		String itemId = request.getParameter("itemid");
+		String fabricName = request.getParameter("fabricname");
+		String fabricCountry = request.getParameter("fabriccountry");
+		String type = request.getParameter("type");
+		String hdFormat = request.getParameter("hdformat");
+		String resolution = request.getParameter("resolution");
+		String model = request.getParameter("model");
+		String diagonal = request.getParameter("diagonal");
+		String price = request.getParameter("price");
+		String count = request.getParameter("count");
+
+		if (addPar != null) {
+			Globals.DB_SERVICE.addItem(
+					fabricName,
+					fabricCountry,
+					type,
+					hdFormat,
+					resolution,
+					model,
+					diagonal,
+					price,
+					count);
+		} else if (editPar != null) {
+			Globals.DB_SERVICE.updateItem(
+					itemId,
+					fabricName,
+					fabricCountry,
+					type,
+					hdFormat,
+					resolution,
+					model,
+					diagonal,
+					price,
+					count);
+		} else if (deletePar != null) {
+			Globals.DB_SERVICE.deleteItem(itemId);
+		}
+
+		response.sendRedirect("/admin");
 	}
 }

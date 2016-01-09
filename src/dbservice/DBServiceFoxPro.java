@@ -1,5 +1,6 @@
 package dbservice;
 
+import main.Globals;
 import main.UserGroup;
 import main.UserProfile;
 import java.sql.*;
@@ -236,5 +237,50 @@ public class DBServiceFoxPro implements DBService {
 		}
 
 		return item;
+	}
+
+	@Override
+	public void addItem(String fabricName, String fabricCountry, String type, String hdFormat, String resolution, String model, String diagonal, String price, String count) {
+		int fabricId = getFabricId(fabricName, fabricCountry);
+		int typeId = getTypeId(type);
+		int formatId = getFormatId(hdFormat);
+		int resolutionId = getResolutionId(resolution);
+
+		String sql = "INSERT INTO items (fabric_id, type_id, format_id, resolution_id, model, diagonal, price, count) " +
+				"VALUES (" +
+				fabricId +
+				typeId +
+				formatId +
+				resolutionId +
+				"'" + model + "'" +
+				diagonal +
+				price +
+				count + ")";
+	}
+
+	@Override
+	public void updateItem(String itemId, String fabricName, String fabricCountry, String type, String hdFormat, String resolution, String model, String diagonal, String price, String count) {
+
+	}
+
+	@Override
+	public void deleteItem(String itemId) {
+
+	}
+
+	private int getFabricId(String name, String country) {
+		return -1;
+	}
+
+	private int getTypeId(String value) {
+		return -1;
+	}
+
+	private int getFormatId(String value) {
+		return -1;
+	}
+
+	private int getResolutionId(String value) {
+		return -1;
 	}
 }

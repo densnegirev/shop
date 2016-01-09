@@ -18,7 +18,7 @@
 			</tr>
 			<tr>
 				<td class="right">Формат</td>
-				<td><input type="text" name="hd_format" value="${hdFormat}" /></td>
+				<td><input type="text" name="hdformat" value="${hdFormat}" /></td>
 			</tr>
 			<tr>
 				<td class="right">Разрешение</td>
