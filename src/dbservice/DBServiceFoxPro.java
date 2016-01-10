@@ -342,8 +342,8 @@ public class DBServiceFoxPro implements DBService {
 
 			try {
 				int orderDateId = getOrderDateId(userId, orderDate);
-				String sql = "UPDATE items SET items.count = items.count - " + trashItem.getAmount() + " WHERE items.item_id = " + trashItem.getItemId();
-				
+				String sql = "UPDATE items SET count = count - " + trashItem.getAmount() + " WHERE item_id = " + trashItem.getItemId();
+
 				con = DriverManager.getConnection(url, "", "");
 
 				Statement stmt = con.createStatement();
@@ -354,6 +354,8 @@ public class DBServiceFoxPro implements DBService {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+
+			Globals.TRASH.deleteItem(userId, trashItem.getItemId());
 		}
 	}
 
