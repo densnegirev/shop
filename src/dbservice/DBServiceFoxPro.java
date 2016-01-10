@@ -339,6 +339,21 @@ public class DBServiceFoxPro implements DBService {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+
+			try {
+				int orderDateId = getOrderDateId(userId, orderDate);
+				String sql = "UPDATE items SET items.count = items.count - " + trashItem.getAmount() + " WHERE items.item_id = " + trashItem.getItemId();
+				
+				con = DriverManager.getConnection(url, "", "");
+
+				Statement stmt = con.createStatement();
+
+				stmt.executeUpdate(sql);
+				stmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
