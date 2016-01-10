@@ -1,12 +1,17 @@
 package dbservice;
 
+import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.LinkedList;
+import com.hxtt.sql.dbf.DBFDriver;
+import shop.Item;
+import shop.TrashItem;
 import main.Globals;
 import main.UserGroup;
 import main.UserProfile;
-import java.sql.*;
-import java.util.ArrayList;
-import com.hxtt.sql.dbf.DBFDriver;
-import shop.Item;
 
 public class DBServiceFoxPro implements DBService {
 	private String url = "jdbc:DBF:///db";
@@ -270,12 +275,12 @@ public class DBServiceFoxPro implements DBService {
 
 		System.out.println("Catalog ADD SQL: " + sql);
 	}
-
+	/*
 	@Override
 	public void updateItem(String itemId, String fabricName, String fabricCountry, String type, String hdFormat, String resolution, String model, String diagonal, String price, String count) {
 
 	}
-
+	*/
 	@Override
 	public void deleteItem(String itemId) {
 		String sql = "DELETE FROM items WHERE items.item_id = " + itemId;
@@ -291,6 +296,74 @@ public class DBServiceFoxPro implements DBService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void moveItemsFromTrash(int userId) {
+		LinkedList<TrashItem> userItems = Globals.TRASH.getUserItems(userId);
+		DateFormat dateFormat = new SimpleDateFormat("{^yyyy-MM-dd}");
+		Calendar cal = Calendar.getInstance();
+		String orderDate = dateFormat.format(cal.getTime());
+
+		try {
+			String sql = "INSERT INTO orderdate (user_id, order_date) VALUES (" +
+					userId + ", " +
+					orderDate + ")";
+
+			con = DriverManager.getConnection(url, "", "");
+
+			Statement stmt = con.createStatement();
+
+			stmt.executeUpdate(sql);
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		for (TrashItem trashItem : userItems) {
+			try {
+				int orderDateId = getOrderDateId(userId, orderDate);
+				String sql = "INSERT INTO orderinfo (orderdate_id, item_id, amount) VALUES (" +
+						orderDate + ", " +
+						trashItem.getItemId() + ", " +
+						trashItem.getAmount() + ")";
+
+				con = DriverManager.getConnection(url, "", "");
+
+				Statement stmt = con.createStatement();
+
+				stmt.executeUpdate(sql);
+				stmt.close();
+				con.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	private int getOrderDateId(int userId, String orderDate) {
+		int res = -1;
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT orderdate.orderdate_id FROM orderdate WHERE orderdate.user_id = " + userId + " AND orderdate.order_date = " + orderDate;
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			if (rs.next()) {
+				res = (int)rs.getObject(1);
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 
 	private int getFabricId(String name, String country) {

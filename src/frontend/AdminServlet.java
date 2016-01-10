@@ -5,9 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import main.Globals;
 import main.UserProfile;
 import shop.AdminPanel;
@@ -32,7 +30,7 @@ public class AdminServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String addPar = request.getParameter("add");
-		String editPar = request.getParameter("edit");
+		//String editPar = request.getParameter("edit");
 		String deletePar = request.getParameter("delete");
 
 		String itemId = request.getParameter("itemid");
@@ -57,7 +55,7 @@ public class AdminServlet extends HttpServlet {
 					diagonal,
 					price,
 					count);
-		} else if (editPar != null) {
+		}/* else if (editPar != null) {
 			Globals.DB_SERVICE.updateItem(
 					itemId,
 					fabricName,
@@ -69,7 +67,7 @@ public class AdminServlet extends HttpServlet {
 					diagonal,
 					price,
 					count);
-		} else if (deletePar != null) {
+		}*/ else if (deletePar != null) {
 			Globals.DB_SERVICE.deleteItem(itemId);
 		}
 

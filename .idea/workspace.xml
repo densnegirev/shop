@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cdfaa-5b11-426f-a0ae-f3accb93a073" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shop/Trash.java" afterPath="$PROJECT_DIR$/src/shop/Trash.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/AdminServlet.java" afterPath="$PROJECT_DIR$/src/frontend/AdminServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBService.java" afterPath="$PROJECT_DIR$/src/dbservice/DBService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" afterPath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/TrashServlet.java" afterPath="$PROJECT_DIR$/src/frontend/TrashServlet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server_tpl/include/trash_table.inc" afterPath="$PROJECT_DIR$/server_tpl/include/trash_table.inc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shop.iws" />
@@ -38,6 +39,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AdminServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/frontend/AdminServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AdminPanel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shop/AdminPanel.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,8 +63,65 @@
         <entry file="file://$PROJECT_DIR$/src/frontend/TrashServlet.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <caret line="59" column="60" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Trash.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shop/Trash.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBServiceFoxPro.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.51111114">
+              <caret line="328" column="45" selection-start-line="328" selection-start-column="45" selection-end-line="328" selection-end-column="45" />
+              <folding>
+                <marker date="1452434607717" expanded="true" signature="823:1235" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="1597:1649" placeholder="SELECT * FRO..users..." />
+                <marker date="1452434607717" expanded="true" signature="4695:4764" placeholder="SELECT group..groups..." />
+                <marker date="1452434607717" expanded="true" signature="5273:5673" placeholder="SELECT items..items..." />
+                <marker date="1452434607717" expanded="true" signature="6630:7051" placeholder="SELECT items..items..." />
+                <marker date="1452434607717" expanded="true" signature="8242:8521" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="9081:9121" placeholder="DELETE FROM ..." />
+                <marker date="1452434607717" expanded="true" signature="9676:9719" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="9676:9728" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="9676:9748" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="9676:9749" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="9676:9758" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="9676:9770" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="9676:9772" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="10117:10241" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="10117:10277" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="10665:10778" placeholder="SELECT order..orderdate..." />
+                <marker date="1452434607717" expanded="true" signature="10665:10782" placeholder="SELECT fabri..fabricators..." />
+                <marker date="1452434607717" expanded="true" signature="11200:11282" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="11740:11869" placeholder="SELECT fabri..fabricators..." />
+                <marker date="1452434607717" expanded="true" signature="12252:12301" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="12732:12798" placeholder="SELECT types..types..." />
+                <marker date="1452434607717" expanded="true" signature="13185:13243" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="13678:13763" placeholder="SELECT hdfor..hdformats..." />
+                <marker date="1452434607717" expanded="true" signature="14158:14219" placeholder="INSERT INTO ..." />
+                <marker date="1452434607717" expanded="true" signature="14662:14758" placeholder="SELECT resol..resolutions..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,26 +139,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trash_table_row.inc" pinned="false" current-in-tab="true">
+      <file leaf-file-name="trash_table_row.inc" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server_tpl/include/trash_table_row.inc">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30985916">
-              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+            <state vertical-scroll-proportion="-7.586207">
+              <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
               <folding />
             </state>
           </provider>
           <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
             <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Trash.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/shop/Trash.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="17" column="55" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
-              <folding />
-            </state>
           </provider>
         </entry>
       </file>
@@ -152,14 +210,14 @@
         <option value="$PROJECT_DIR$/server_tpl/include/products_table_row.inc" />
         <option value="$PROJECT_DIR$/src/shop/AdminPanel.java" />
         <option value="$PROJECT_DIR$/public_html/css/products.css" />
-        <option value="$PROJECT_DIR$/src/dbservice/DBService.java" />
-        <option value="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
-        <option value="$PROJECT_DIR$/src/frontend/AdminServlet.java" />
         <option value="$PROJECT_DIR$/server_tpl/include/catalog_table.inc" />
         <option value="$PROJECT_DIR$/server_tpl/include/catalog_table_row.inc" />
         <option value="$PROJECT_DIR$/server_tpl/include/trash_table.inc" />
-        <option value="$PROJECT_DIR$/src/frontend/TrashServlet.java" />
         <option value="$PROJECT_DIR$/src/shop/Trash.java" />
+        <option value="$PROJECT_DIR$/src/frontend/AdminServlet.java" />
+        <option value="$PROJECT_DIR$/src/dbservice/DBService.java" />
+        <option value="$PROJECT_DIR$/src/frontend/TrashServlet.java" />
+        <option value="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
       </list>
     </option>
   </component>
@@ -504,6 +562,74 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="FlashPlayerDebugger.exe" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -518,6 +644,16 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <module name="" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="depsClasspath" value="false" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <setting name="launchBrowser" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -546,12 +682,21 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
       <option name="SHMEM_ADDRESS" value="javadebug" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
@@ -582,6 +727,15 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
     </list>
@@ -608,12 +762,12 @@
       <workItem from="1450957135054" duration="3492000" />
       <workItem from="1452338331263" duration="12725000" />
       <workItem from="1452424148923" duration="451000" />
-      <workItem from="1452424805522" duration="7579000" />
+      <workItem from="1452424805522" duration="8788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108491000" />
+    <option name="totallyTimeSpent" value="109700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -942,50 +1096,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="242" column="174" selection-start-line="242" selection-start-column="174" selection-end-line="242" selection-end-column="174" />
-          <folding>
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..users..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="SELECT group..groups..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="SELECT items..items..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="SELECT items..items..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="SELECT fabri..fabricators..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="SELECT types..types..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="SELECT hdfor..hdformats..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1452424923483" expanded="true" signature="-1:-1" placeholder="SELECT resol..resolutions..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/AdminServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="40" selection-start-line="27" selection-start-column="40" selection-end-line="27" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1012,20 +1126,23 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/AdminPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Globals.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16296296">
           <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_tpl/include/trash_table_row.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.586207">
+          <caret line="10" column="20" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server_tpl/include/trash_table.inc">
@@ -1039,14 +1156,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/TrashServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/Trash.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1055,15 +1164,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server_tpl/include/trash_table_row.inc">
+    <entry file="file://$PROJECT_DIR$/src/frontend/AdminServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30985916">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/AdminPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/TrashServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="60" selection-start-line="59" selection-start-column="60" selection-end-line="59" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51111114">
+          <caret line="328" column="45" selection-start-line="328" selection-start-column="45" selection-end-line="328" selection-end-column="45" />
+          <folding>
+            <marker date="1452434607717" expanded="true" signature="823:1235" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="1597:1649" placeholder="SELECT * FRO..users..." />
+            <marker date="1452434607717" expanded="true" signature="4695:4764" placeholder="SELECT group..groups..." />
+            <marker date="1452434607717" expanded="true" signature="5273:5673" placeholder="SELECT items..items..." />
+            <marker date="1452434607717" expanded="true" signature="6630:7051" placeholder="SELECT items..items..." />
+            <marker date="1452434607717" expanded="true" signature="8242:8521" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="9081:9121" placeholder="DELETE FROM ..." />
+            <marker date="1452434607717" expanded="true" signature="9676:9719" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="9676:9728" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="9676:9748" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="9676:9749" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="9676:9758" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="9676:9770" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="9676:9772" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="10117:10241" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="10117:10277" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="10665:10778" placeholder="SELECT order..orderdate..." />
+            <marker date="1452434607717" expanded="true" signature="10665:10782" placeholder="SELECT fabri..fabricators..." />
+            <marker date="1452434607717" expanded="true" signature="11200:11282" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="11740:11869" placeholder="SELECT fabri..fabricators..." />
+            <marker date="1452434607717" expanded="true" signature="12252:12301" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="12732:12798" placeholder="SELECT types..types..." />
+            <marker date="1452434607717" expanded="true" signature="13185:13243" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="13678:13763" placeholder="SELECT hdfor..hdformats..." />
+            <marker date="1452434607717" expanded="true" signature="14158:14219" placeholder="INSERT INTO ..." />
+            <marker date="1452434607717" expanded="true" signature="14662:14758" placeholder="SELECT resol..resolutions..." />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
