@@ -305,10 +305,12 @@ public class DBServiceFoxPro implements DBService {
 		Calendar cal = Calendar.getInstance();
 		String orderDate = dateFormat.format(cal.getTime());
 
+		System.out.println(orderDate);
+
 		try {
-			String sql = "INSERT INTO orderdate (user_id, order_date) VALUES (" +
+			String sql = "INSERT INTO ordersdbf (user_id, order_date) VALUES (" +
 					userId + ", " +
-					orderDate + ")";
+					"'" + orderDate + "')";
 
 			con = DriverManager.getConnection(url, "", "");
 
@@ -324,7 +326,7 @@ public class DBServiceFoxPro implements DBService {
 		for (TrashItem trashItem : userItems) {
 			try {
 				int orderDateId = getOrderDateId(userId, orderDate);
-				String sql = "INSERT INTO orderinfo (orderdate_id, item_id, amount) VALUES (" +
+				String sql = "INSERT INTO orderdata (orderdate_id, item_id, amount) VALUES (" +
 						orderDate + ", " +
 						trashItem.getItemId() + ", " +
 						trashItem.getAmount() + ")";
@@ -348,7 +350,7 @@ public class DBServiceFoxPro implements DBService {
 		try {
 			con = DriverManager.getConnection(url, "", "");
 
-			String sql = "SELECT orderdate.orderdate_id FROM orderdate WHERE orderdate.user_id = " + userId + " AND orderdate.order_date = " + orderDate;
+			String sql = "SELECT ordersdbf.orderdate_id FROM ordersdbf WHERE ordersdbf.user_id = " + userId + " AND ordersdbf.order_date = " + orderDate;
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 
