@@ -15,7 +15,7 @@ public class Trash {
 	}
 
 	public void addItem(int userId, int itemId, int amount) {
-		LinkedList<TrashItem> userItems = items.get(userId);
+		LinkedList<TrashItem> userItems = getUserItems(userId);
 
 		if (userItems == null) {
 			userItems = new LinkedList<>();
@@ -35,7 +35,7 @@ public class Trash {
 	}
 
 	public void deleteItem(int userId, int itemId) {
-		LinkedList<TrashItem> userItems = items.get(userId);
+		LinkedList<TrashItem> userItems = getUserItems(userId);
 
 		if (userItems == null) {
 			return;
@@ -51,7 +51,7 @@ public class Trash {
 	}
 
 	public int getItemAmount(int userId, int itemId) {
-		LinkedList<TrashItem> userItems = items.get(userId);
+		LinkedList<TrashItem> userItems = getUserItems(userId);
 
 		if (userItems == null) {
 			return 0;
@@ -66,8 +66,12 @@ public class Trash {
 		return 0;
 	}
 
+	public LinkedList<TrashItem> getUserItems(int userId) {
+		return items.get(userId);
+	}
+
 	public String getContent(int userId) {
-		LinkedList<TrashItem> userItems = items.get(userId);
+		LinkedList<TrashItem> userItems = getUserItems(userId);
 		Map<String, Object> pv = new HashMap<>();
 
 		if (userItems != null && !userItems.isEmpty()) {

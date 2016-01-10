@@ -9,4 +9,9 @@
 	</tr>
 	${rows}
 </table>
+<br />
+<form action="/trash" method="post">
+<input type="hidden" name="action" value="confirm" />
+<input type="submit" value="Оформить заказ" />
+</form>
 <!-- trash_table.inc END -->

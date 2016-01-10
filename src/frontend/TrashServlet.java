@@ -34,28 +34,32 @@ public class TrashServlet extends HttpServlet {
 		String itemId = request.getParameter("itemid");
 		String amount = request.getParameter("amount");
 
-		if (up != null && action != null && itemId != null) {
-			int userId = up.getId();
-			int itemIdNum = Integer.parseInt(itemId);
+		if (action != null) {
+			if (up != null && itemId != null) {
+				int userId = up.getId();
+				int itemIdNum = Integer.parseInt(itemId);
 
-			if (action.equals("add") && amount != null) {
-				int amountNum = Integer.parseInt(amount);
-				int itemCount = Globals.DB_SERVICE.getItem(itemIdNum).getCount();
-				int rem = itemCount - Globals.TRASH.getItemAmount(userId, itemIdNum) - amountNum;
+				if (action.equals("add") && amount != null) {
+					int amountNum = Integer.parseInt(amount);
+					int itemCount = Globals.DB_SERVICE.getItem(itemIdNum).getCount();
+					int rem = itemCount - Globals.TRASH.getItemAmount(userId, itemIdNum) - amountNum;
 
-				if (rem >= 0 && rem < itemCount) {
-					Globals.TRASH.addItem(userId, itemIdNum, amountNum);
+					if (rem >= 0 && rem < itemCount) {
+						Globals.TRASH.addItem(userId, itemIdNum, amountNum);
 
-					System.out.println("Added item to trash: " + itemIdNum + " (amount: " + amountNum + ")");
-				} else {
-					System.out.println("ERROR: Out of stock: " + itemIdNum);
+						System.out.println("Added item to trash: " + itemIdNum + " (amount: " + amountNum + ")");
+					} else {
+						System.out.println("ERROR: Out of stock: " + itemIdNum);
+					}
+				} else if (action.equals("delete")) {
+					Globals.TRASH.deleteItem(userId, itemIdNum);
+
+					response.sendRedirect("/trash");
+
+					return;
 				}
-			} else if (action.equals("delete")) {
-				Globals.TRASH.deleteItem(userId, itemIdNum);
+			} else if (action.equals("confirm")) {
 
-				response.sendRedirect("/trash");
-
-				return;
 			}
 		}
 
