@@ -6,10 +6,10 @@
 		<td class="center">Действия</td>
 	</tr>
 	${rows}
-	<form action="/admin" method="post">
+	<form action="/admin" method="post" enctype="multipart/form-data">
 	<tr>
 		<td class="preview center">
-			Выбор фото: <input type="file" name="image" />
+
 		</td>
 		<td>
 			<table class="catalogSubTab">
