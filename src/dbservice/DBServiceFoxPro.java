@@ -301,11 +301,9 @@ public class DBServiceFoxPro implements DBService {
 	@Override
 	public void moveItemsFromTrash(int userId) {
 		LinkedList<TrashItem> userItems = Globals.TRASH.getUserItems(userId);
-		DateFormat dateFormat = new SimpleDateFormat("{^yyyy-MM-dd}");
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar cal = Calendar.getInstance();
 		String orderDate = dateFormat.format(cal.getTime());
-
-		System.out.println(orderDate);
 
 		try {
 			String sql = "INSERT INTO ordersdbf (user_id, order_date) VALUES (" +
@@ -327,7 +325,7 @@ public class DBServiceFoxPro implements DBService {
 			try {
 				int orderDateId = getOrderDateId(userId, orderDate);
 				String sql = "INSERT INTO orderdata (orderdate_id, item_id, amount) VALUES (" +
-						orderDate + ", " +
+						orderDateId + ", " +
 						trashItem.getItemId() + ", " +
 						trashItem.getAmount() + ")";
 
