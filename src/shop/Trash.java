@@ -84,7 +84,7 @@ public class Trash {
 				pv.put("itemId", item.getId());
 
 				rows += PageGenerator.getPage("server_tpl/include/trash_table_row.inc", pv);
-				totalSum += item.getPrice();
+				totalSum += item.getPrice() * trashItem.getAmount();
 			}
 
 			rows += "<tr><td class=\"right\" colspan=\"4\">Итого: " + totalSum + "&nbsp;</td><td></td></tr>";
