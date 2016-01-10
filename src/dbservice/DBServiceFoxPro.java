@@ -247,13 +247,13 @@ public class DBServiceFoxPro implements DBService {
 		int resolutionId = getResolutionId(resolution);
 
 		String sql = "INSERT INTO items (fabric_id, type_id, format_id, resolution_id, model, diagonal, price, count) VALUES (" +
-				fabricId +
-				typeId +
-				formatId +
-				resolutionId +
-				"'" + model + "'" +
-				diagonal +
-				price +
+				fabricId + ", " +
+				typeId + ", " +
+				formatId + ", " +
+				resolutionId + ", " +
+				"'" + model + "', " +
+				diagonal + ", " +
+				price + ", " +
 				count + ")";
 
 		try {
@@ -267,6 +267,8 @@ public class DBServiceFoxPro implements DBService {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
+		System.out.println("Catalog ADD SQL: " + sql);
 	}
 
 	@Override
@@ -436,7 +438,7 @@ public class DBServiceFoxPro implements DBService {
 	}
 
 	private int getResolutionId(String value) {
-		int res = getFormatIdHelper(value);
+		int res = getResolutionIdHelper(value);
 
 		if (res == -1) {
 			String sql = "INSERT INTO resolutions (resolution) VALUES ('" + value + "')";
