@@ -471,7 +471,7 @@ public class DBServiceFoxPro implements DBService {
 		try {
 			con = DriverManager.getConnection(url, "", "");
 
-			String sql = "SELECT * FROM ordersdbf";
+			String sql = "SELECT ordersdbf.orderdate_id, ordersdbf.order_date, ordersdbf.delivery_date FROM ordersdbf";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 
