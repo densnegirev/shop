@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cdfaa-5b11-426f-a0ae-f3accb93a073" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBService.java" afterPath="$PROJECT_DIR$/src/dbservice/DBService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" afterPath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shop/Order.java" afterPath="$PROJECT_DIR$/src/shop/Order.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shop/admin/PurchasesPanel.java" afterPath="$PROJECT_DIR$/src/shop/admin/PurchasesPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/items.dbf" afterPath="$PROJECT_DIR$/db/items.dbf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/orderData.dbf" afterPath="$PROJECT_DIR$/db/orderData.dbf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/orderdata.CDX" afterPath="$PROJECT_DIR$/db/orderdata.CDX" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/ordersdbf.CDX" afterPath="$PROJECT_DIR$/db/ordersdbf.CDX" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/ordersdbf.dbf" afterPath="$PROJECT_DIR$/db/ordersdbf.dbf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shop.iws" />
@@ -711,12 +712,12 @@
       <workItem from="1452424148923" duration="451000" />
       <workItem from="1452424805522" duration="11041000" />
       <workItem from="1452509391889" duration="22730000" />
-      <workItem from="1452534309771" duration="529000" />
+      <workItem from="1452534309771" duration="665000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135212000" />
+    <option name="totallyTimeSpent" value="135348000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
