@@ -355,12 +355,7 @@ public class DBServiceFoxPro implements DBService {
 
 		System.out.println("Catalog ADD SQL: " + sql);
 	}
-	/*
-	@Override
-	public void updateItem(String itemId, String fabricName, String fabricCountry, String type, String hdFormat, String resolution, String model, String diagonal, String price, String count) {
 
-	}
-	*/
 	@Override
 	public void deleteItem(String itemId) {
 		String sql = "DELETE FROM items WHERE items.item_id = " + itemId;
@@ -447,6 +442,36 @@ public class DBServiceFoxPro implements DBService {
 			con = DriverManager.getConnection(url, "", "");
 
 			String sql = "SELECT ordersdbf.orderdate_id, ordersdbf.order_date, ordersdbf.delivery_date FROM ordersdbf WHERE ordersdbf.user_id = " + userId;
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				int orderDateId = (int)rs.getObject(1);
+				String orderDate = rs.getObject(2).toString();
+				String deliveryDate = rs.getObject(3) != null ? rs.getObject(3).toString() : "Не установлена";
+				ArrayList<TrashItem> items = getUserOrderItems(orderDateId);
+
+				res.add(new Order(orderDate, deliveryDate, items));
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
+	}
+
+	@Override
+	public ArrayList<Order> getOrders() {
+		ArrayList<Order> res = new ArrayList<>();
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT * FROM ordersdbf";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 
