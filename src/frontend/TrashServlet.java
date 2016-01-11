@@ -27,7 +27,7 @@ public class TrashServlet extends HttpServlet {
 		String content2 = new PurchaseHistory().getContent(up.getId());
 
 		pageBuilder.setTitle(Globals.SITE_TITLE + " | Корзина");
-		pageBuilder.setContent(content1 + "<br />" + content2);
+		pageBuilder.setContent(content1 + "<br /><br />История заказов<br />" + content2);
 		pageBuilder.buildPage();
 	}
 

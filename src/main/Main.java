@@ -2,6 +2,8 @@ package main;
 
 import frontend.*;
 import frontend.admin.CatalogServlet;
+import frontend.admin.PurchasesServlet;
+import frontend.admin.UsersServlet;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerList;
@@ -30,6 +32,8 @@ public class Main {
 		Servlet trash = new TrashServlet();
 		Servlet admin = new AdminServlet();
 		Servlet adminCatalog = new CatalogServlet();
+		Servlet adminPurchases = new PurchasesServlet();
+		Servlet adminUsers = new UsersServlet();
 		ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
 		
 		context.addServlet(new ServletHolder(signIn), "/signin");
@@ -40,8 +44,8 @@ public class Main {
 		context.addServlet(new ServletHolder(trash), "/trash");
 		context.addServlet(new ServletHolder(admin), "/admin");
 		context.addServlet(new ServletHolder(adminCatalog), "/admin_catalog");
-		//context.addServlet(new ServletHolder(admin), "/admin/purchases");
-		//context.addServlet(new ServletHolder(admin), "/admin/users");
+		context.addServlet(new ServletHolder(adminPurchases), "/admin_purchases");
+		context.addServlet(new ServletHolder(adminUsers), "/admin_users");
 
 		ResourceHandler resource_handler = new ResourceHandler();
 		HandlerList handlers = new HandlerList();
