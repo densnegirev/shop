@@ -373,7 +373,7 @@ public class DBServiceFoxPro implements DBService {
 			while (rs.next()) {
 				int orderDateId = (int)rs.getObject(1);
 				String orderDate = rs.getObject(2).toString();
-				String deliveryDate = rs.getObject(3) != null ? rs.getObject(3).toString() : "Ожидается";
+				String deliveryDate = rs.getObject(3) != null ? rs.getObject(3).toString() : "Не установлена";
 				ArrayList<TrashItem> items = getUserOrderItems(orderDateId);
 
 				res.add(new Order(orderDate, deliveryDate, items));
