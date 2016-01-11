@@ -209,6 +209,42 @@ public class DBServiceFoxPro implements DBService {
 	}
 
 	@Override
+	public ArrayList<Item> getItemsFromList(String list) {
+		ArrayList<Item> result = new ArrayList<>();
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT items.item_id, fabricators.name, fabricators.country, types.type, hdformats.hd_format, resolutions.resolution, items.model, items.diagonal, items.price, items.count FROM items, fabricators, types, hdformats, resolutions WHERE items.fabric_id = fabricators.fabric_id AND items.type_id = types.type_id AND items.format_id = hdformats.format_id AND items.resolution_id = resolutions.resolution_id AND items.item_id IN " + list;
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				int id = (int)rs.getObject(1);
+				String fabricName = rs.getObject(2).toString();
+				String fabricCountry = rs.getObject(3).toString();
+				String type = rs.getObject(4).toString();
+				String format = rs.getObject(5).toString();
+				String resolution = rs.getObject(6).toString();
+				String model = rs.getObject(7).toString();
+				int diagonal = (int)rs.getObject(8);
+				int price = (int)rs.getObject(9);
+				int count = (int)rs.getObject(10);
+
+				result.add(new Item(id, fabricName, fabricCountry, type, format, resolution, model, diagonal, price, count));
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	@Override
 	public Item getItem(int itemId) {
 		Item item = null;
 
@@ -422,7 +458,7 @@ public class DBServiceFoxPro implements DBService {
 		try {
 			con = DriverManager.getConnection(url, "", "");
 
-			String sql = "SELECT ordersdbf.orderdate_id FROM ordersdbf WHERE ordersdbf.user_id = " + userId + " AND ordersdbf.order_date = '" + orderDate + "'";
+			String sql = "SELECT MAX(ordersdbf.orderdate_id) FROM ordersdbf WHERE ordersdbf.user_id = " + userId + " AND ordersdbf.order_date = '" + orderDate + "'";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 

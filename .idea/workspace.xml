@@ -7,8 +7,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/orderdata.CDX" afterPath="$PROJECT_DIR$/db/orderdata.CDX" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/ordersdbf.CDX" afterPath="$PROJECT_DIR$/db/ordersdbf.CDX" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/ordersdbf.dbf" afterPath="$PROJECT_DIR$/db/ordersdbf.dbf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBService.java" afterPath="$PROJECT_DIR$/src/dbservice/DBService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" afterPath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shop/PurchaseHistory.java" afterPath="$PROJECT_DIR$/src/shop/PurchaseHistory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server_tpl/include/orders_table_row_header.inc" afterPath="$PROJECT_DIR$/server_tpl/include/orders_table_row_header.inc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shop.iws" />
@@ -56,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/src/shop/PurchaseHistory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -105,51 +106,53 @@
       <file leaf-file-name="DBServiceFoxPro.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36049384">
-              <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.67407405">
+              <caret line="460" column="60" selection-start-line="460" selection-start-column="60" selection-end-line="460" selection-end-column="60" />
               <folding>
-                <marker date="1452517295585" expanded="true" signature="842:1254" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="1616:1668" placeholder="SELECT * FRO..users..." />
-                <marker date="1452517295585" expanded="true" signature="4628:4697" placeholder="SELECT group..groups..." />
-                <marker date="1452517295585" expanded="true" signature="5206:5606" placeholder="SELECT items..items..." />
-                <marker date="1452517295585" expanded="true" signature="6563:6984" placeholder="SELECT items..items..." />
-                <marker date="1452517295585" expanded="true" signature="8175:8454" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="9014:9054" placeholder="DELETE FROM ..." />
-                <marker date="1452517295585" expanded="true" signature="9606:9649" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="9606:9658" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="9606:9678" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="9606:9679" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="9606:9688" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="9606:9706" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="9606:9709" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="10053:10179" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="10053:10215" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="10469:10482" placeholder="UPDATE items..." />
-                <marker date="1452517295585" expanded="true" signature="10469:10485" placeholder="UPDATE items..." />
-                <marker date="1452517295585" expanded="true" signature="10469:10486" placeholder="UPDATE items..." />
-                <marker date="1452517295585" expanded="true" signature="10469:10501" placeholder="UPDATE items..." />
-                <marker date="1452517295585" expanded="true" signature="10469:10502" placeholder="UPDATE items..." />
-                <marker date="1452517295585" expanded="true" signature="10469:10538" placeholder="UPDATE items..." />
-                <marker date="1452517295585" expanded="true" signature="10469:10547" placeholder="UPDATE items..." />
-                <marker date="1452517295585" expanded="true" signature="10469:10548" placeholder="UPDATE items..." />
-                <marker date="1452517295585" expanded="true" signature="10481:10482" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="11014:11132" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452517295585" expanded="true" signature="11014:11142" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452517295585" expanded="true" signature="11892:11956" placeholder="SELECT FROM ..ordersdbf..." />
-                <marker date="1452517295585" expanded="true" signature="11892:11981" placeholder="SELECT order..orderdata..." />
-                <marker date="1452517295585" expanded="true" signature="12514:12627" placeholder="SELECT order..orderdate..." />
-                <marker date="1452517295585" expanded="true" signature="12514:12628" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452517295585" expanded="true" signature="12514:12632" placeholder="SELECT fabri..fabricators..." />
-                <marker date="1452517295585" expanded="true" signature="12514:12646" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452517295585" expanded="true" signature="12514:12647" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452517295585" expanded="true" signature="13056:13138" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="13596:13725" placeholder="SELECT fabri..fabricators..." />
-                <marker date="1452517295585" expanded="true" signature="14108:14157" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="14588:14654" placeholder="SELECT types..types..." />
-                <marker date="1452517295585" expanded="true" signature="15041:15099" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="15534:15619" placeholder="SELECT hdfor..hdformats..." />
-                <marker date="1452517295585" expanded="true" signature="16014:16075" placeholder="INSERT INTO ..." />
-                <marker date="1452517295585" expanded="true" signature="16518:16614" placeholder="SELECT resol..resolutions..." />
+                <marker date="1452521958762" expanded="true" signature="842:1254" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="1616:1668" placeholder="SELECT * FRO..users..." />
+                <marker date="1452521958762" expanded="true" signature="4628:4697" placeholder="SELECT group..groups..." />
+                <marker date="1452521958762" expanded="true" signature="5206:5606" placeholder="SELECT items..items..." />
+                <marker date="1452521958762" expanded="true" signature="6610:7021" placeholder="SELECT items..items..." />
+                <marker date="1452521958762" expanded="true" signature="6610:7032" placeholder="SELECT items..items..." />
+                <marker date="1452521958762" expanded="true" signature="7996:8417" placeholder="SELECT items..items..." />
+                <marker date="1452521958762" expanded="true" signature="9608:9887" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="10447:10487" placeholder="DELETE FROM ..." />
+                <marker date="1452521958762" expanded="true" signature="11039:11082" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="11039:11091" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="11039:11111" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="11039:11112" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="11039:11121" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="11039:11139" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="11039:11142" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="11486:11612" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="11486:11648" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="11902:11915" placeholder="UPDATE items..." />
+                <marker date="1452521958762" expanded="true" signature="11902:11918" placeholder="UPDATE items..." />
+                <marker date="1452521958762" expanded="true" signature="11902:11919" placeholder="UPDATE items..." />
+                <marker date="1452521958762" expanded="true" signature="11902:11934" placeholder="UPDATE items..." />
+                <marker date="1452521958762" expanded="true" signature="11902:11935" placeholder="UPDATE items..." />
+                <marker date="1452521958762" expanded="true" signature="11902:11971" placeholder="UPDATE items..." />
+                <marker date="1452521958762" expanded="true" signature="11902:11980" placeholder="UPDATE items..." />
+                <marker date="1452521958762" expanded="true" signature="11902:11981" placeholder="UPDATE items..." />
+                <marker date="1452521958762" expanded="true" signature="11914:11915" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="12447:12565" placeholder="SELECT order..ordersdbf..." />
+                <marker date="1452521958762" expanded="true" signature="12447:12575" placeholder="SELECT order..ordersdbf..." />
+                <marker date="1452521958762" expanded="true" signature="13325:13389" placeholder="SELECT FROM ..ordersdbf..." />
+                <marker date="1452521958762" expanded="true" signature="13325:13414" placeholder="SELECT order..orderdata..." />
+                <marker date="1452521958762" expanded="true" signature="13947:14065" placeholder="SELECT order..orderdate..." />
+                <marker date="1452521958762" expanded="true" signature="13947:14066" placeholder="SELECT order..ordersdbf..." />
+                <marker date="1452521958762" expanded="true" signature="13947:14070" placeholder="SELECT fabri..fabricators..." />
+                <marker date="1452521958762" expanded="true" signature="13947:14084" placeholder="SELECT order..ordersdbf..." />
+                <marker date="1452521958762" expanded="true" signature="13947:14085" placeholder="SELECT order..ordersdbf..." />
+                <marker date="1452521958762" expanded="true" signature="14494:14576" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="15034:15163" placeholder="SELECT fabri..fabricators..." />
+                <marker date="1452521958762" expanded="true" signature="15546:15595" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="16026:16092" placeholder="SELECT types..types..." />
+                <marker date="1452521958762" expanded="true" signature="16479:16537" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="16972:17057" placeholder="SELECT hdfor..hdformats..." />
+                <marker date="1452521958762" expanded="true" signature="17452:17513" placeholder="INSERT INTO ..." />
+                <marker date="1452521958762" expanded="true" signature="17956:18052" placeholder="SELECT resol..resolutions..." />
               </folding>
             </state>
           </provider>
@@ -217,15 +220,15 @@
         <option value="$PROJECT_DIR$/server_tpl/include/catalog_table_row.inc" />
         <option value="$PROJECT_DIR$/server_tpl/include/trash_table.inc" />
         <option value="$PROJECT_DIR$/src/frontend/AdminServlet.java" />
-        <option value="$PROJECT_DIR$/src/dbservice/DBService.java" />
         <option value="$PROJECT_DIR$/src/shop/Order.java" />
         <option value="$PROJECT_DIR$/src/frontend/TrashServlet.java" />
         <option value="$PROJECT_DIR$/src/shop/Trash.java" />
-        <option value="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
         <option value="$PROJECT_DIR$/server_tpl/include/orders_table.inc" />
         <option value="$PROJECT_DIR$/server_tpl/include/orders_table_row.inc" />
-        <option value="$PROJECT_DIR$/src/shop/PurchaseHistory.java" />
         <option value="$PROJECT_DIR$/server_tpl/include/orders_table_row_header.inc" />
+        <option value="$PROJECT_DIR$/src/dbservice/DBService.java" />
+        <option value="$PROJECT_DIR$/src/shop/PurchaseHistory.java" />
+        <option value="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
       </list>
     </option>
   </component>
@@ -777,12 +780,12 @@
       <workItem from="1452338331263" duration="12725000" />
       <workItem from="1452424148923" duration="451000" />
       <workItem from="1452424805522" duration="11041000" />
-      <workItem from="1452509391889" duration="8168000" />
+      <workItem from="1452509391889" duration="11305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120121000" />
+    <option name="totallyTimeSpent" value="123258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -1153,14 +1156,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server_tpl/include/orders_table_row.inc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1185,18 +1180,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server_tpl/include/orders_table.inc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67901236">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1212,58 +1215,60 @@
     <entry file="file://$PROJECT_DIR$/src/shop/PurchaseHistory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36049384">
-          <caret line="220" column="0" selection-start-line="220" selection-start-column="0" selection-end-line="220" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.67407405">
+          <caret line="460" column="60" selection-start-line="460" selection-start-column="60" selection-end-line="460" selection-end-column="60" />
           <folding>
-            <marker date="1452517295585" expanded="true" signature="842:1254" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="1616:1668" placeholder="SELECT * FRO..users..." />
-            <marker date="1452517295585" expanded="true" signature="4628:4697" placeholder="SELECT group..groups..." />
-            <marker date="1452517295585" expanded="true" signature="5206:5606" placeholder="SELECT items..items..." />
-            <marker date="1452517295585" expanded="true" signature="6563:6984" placeholder="SELECT items..items..." />
-            <marker date="1452517295585" expanded="true" signature="8175:8454" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="9014:9054" placeholder="DELETE FROM ..." />
-            <marker date="1452517295585" expanded="true" signature="9606:9649" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="9606:9658" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="9606:9678" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="9606:9679" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="9606:9688" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="9606:9706" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="9606:9709" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="10053:10179" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="10053:10215" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="10469:10482" placeholder="UPDATE items..." />
-            <marker date="1452517295585" expanded="true" signature="10469:10485" placeholder="UPDATE items..." />
-            <marker date="1452517295585" expanded="true" signature="10469:10486" placeholder="UPDATE items..." />
-            <marker date="1452517295585" expanded="true" signature="10469:10501" placeholder="UPDATE items..." />
-            <marker date="1452517295585" expanded="true" signature="10469:10502" placeholder="UPDATE items..." />
-            <marker date="1452517295585" expanded="true" signature="10469:10538" placeholder="UPDATE items..." />
-            <marker date="1452517295585" expanded="true" signature="10469:10547" placeholder="UPDATE items..." />
-            <marker date="1452517295585" expanded="true" signature="10469:10548" placeholder="UPDATE items..." />
-            <marker date="1452517295585" expanded="true" signature="10481:10482" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="11014:11132" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452517295585" expanded="true" signature="11014:11142" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452517295585" expanded="true" signature="11892:11956" placeholder="SELECT FROM ..ordersdbf..." />
-            <marker date="1452517295585" expanded="true" signature="11892:11981" placeholder="SELECT order..orderdata..." />
-            <marker date="1452517295585" expanded="true" signature="12514:12627" placeholder="SELECT order..orderdate..." />
-            <marker date="1452517295585" expanded="true" signature="12514:12628" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452517295585" expanded="true" signature="12514:12632" placeholder="SELECT fabri..fabricators..." />
-            <marker date="1452517295585" expanded="true" signature="12514:12646" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452517295585" expanded="true" signature="12514:12647" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452517295585" expanded="true" signature="13056:13138" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="13596:13725" placeholder="SELECT fabri..fabricators..." />
-            <marker date="1452517295585" expanded="true" signature="14108:14157" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="14588:14654" placeholder="SELECT types..types..." />
-            <marker date="1452517295585" expanded="true" signature="15041:15099" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="15534:15619" placeholder="SELECT hdfor..hdformats..." />
-            <marker date="1452517295585" expanded="true" signature="16014:16075" placeholder="INSERT INTO ..." />
-            <marker date="1452517295585" expanded="true" signature="16518:16614" placeholder="SELECT resol..resolutions..." />
+            <marker date="1452521958762" expanded="true" signature="842:1254" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="1616:1668" placeholder="SELECT * FRO..users..." />
+            <marker date="1452521958762" expanded="true" signature="4628:4697" placeholder="SELECT group..groups..." />
+            <marker date="1452521958762" expanded="true" signature="5206:5606" placeholder="SELECT items..items..." />
+            <marker date="1452521958762" expanded="true" signature="6610:7021" placeholder="SELECT items..items..." />
+            <marker date="1452521958762" expanded="true" signature="6610:7032" placeholder="SELECT items..items..." />
+            <marker date="1452521958762" expanded="true" signature="7996:8417" placeholder="SELECT items..items..." />
+            <marker date="1452521958762" expanded="true" signature="9608:9887" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="10447:10487" placeholder="DELETE FROM ..." />
+            <marker date="1452521958762" expanded="true" signature="11039:11082" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="11039:11091" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="11039:11111" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="11039:11112" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="11039:11121" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="11039:11139" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="11039:11142" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="11486:11612" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="11486:11648" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="11902:11915" placeholder="UPDATE items..." />
+            <marker date="1452521958762" expanded="true" signature="11902:11918" placeholder="UPDATE items..." />
+            <marker date="1452521958762" expanded="true" signature="11902:11919" placeholder="UPDATE items..." />
+            <marker date="1452521958762" expanded="true" signature="11902:11934" placeholder="UPDATE items..." />
+            <marker date="1452521958762" expanded="true" signature="11902:11935" placeholder="UPDATE items..." />
+            <marker date="1452521958762" expanded="true" signature="11902:11971" placeholder="UPDATE items..." />
+            <marker date="1452521958762" expanded="true" signature="11902:11980" placeholder="UPDATE items..." />
+            <marker date="1452521958762" expanded="true" signature="11902:11981" placeholder="UPDATE items..." />
+            <marker date="1452521958762" expanded="true" signature="11914:11915" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="12447:12565" placeholder="SELECT order..ordersdbf..." />
+            <marker date="1452521958762" expanded="true" signature="12447:12575" placeholder="SELECT order..ordersdbf..." />
+            <marker date="1452521958762" expanded="true" signature="13325:13389" placeholder="SELECT FROM ..ordersdbf..." />
+            <marker date="1452521958762" expanded="true" signature="13325:13414" placeholder="SELECT order..orderdata..." />
+            <marker date="1452521958762" expanded="true" signature="13947:14065" placeholder="SELECT order..orderdate..." />
+            <marker date="1452521958762" expanded="true" signature="13947:14066" placeholder="SELECT order..ordersdbf..." />
+            <marker date="1452521958762" expanded="true" signature="13947:14070" placeholder="SELECT fabri..fabricators..." />
+            <marker date="1452521958762" expanded="true" signature="13947:14084" placeholder="SELECT order..ordersdbf..." />
+            <marker date="1452521958762" expanded="true" signature="13947:14085" placeholder="SELECT order..ordersdbf..." />
+            <marker date="1452521958762" expanded="true" signature="14494:14576" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="15034:15163" placeholder="SELECT fabri..fabricators..." />
+            <marker date="1452521958762" expanded="true" signature="15546:15595" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="16026:16092" placeholder="SELECT types..types..." />
+            <marker date="1452521958762" expanded="true" signature="16479:16537" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="16972:17057" placeholder="SELECT hdfor..hdformats..." />
+            <marker date="1452521958762" expanded="true" signature="17452:17513" placeholder="INSERT INTO ..." />
+            <marker date="1452521958762" expanded="true" signature="17956:18052" placeholder="SELECT resol..resolutions..." />
           </folding>
         </state>
       </provider>

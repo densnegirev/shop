@@ -15,6 +15,7 @@ public interface DBService {
 	UserGroup getGroup(int groupId);
 
 	ArrayList<Item> getItems();
+	ArrayList<Item> getItemsFromList(String list);
 	Item getItem(int itemId);
 
 	void addItem(String fabricName, String fabricCountry, String type, String hdFormat, String resolution, String model, String diagonal, String price, String count);

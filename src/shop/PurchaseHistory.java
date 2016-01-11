@@ -20,8 +20,20 @@ public class PurchaseHistory {
 
 			rows += PageGenerator.getPage("server_tpl/include/orders_table_row_header.inc", pv);
 
-			for (TrashItem trashItem : order.getItems()) {
-				Item item = Globals.DB_SERVICE.getItem(trashItem.getItemId());
+			ArrayList<TrashItem> trashItems = order.getItems();
+			String itemsList = "(" + trashItems.get(0).getItemId();
+
+			for (int i = 1; i < trashItems.size(); ++i) {
+				itemsList += ", " + trashItems.get(i).getItemId();
+			}
+
+			itemsList += ")";
+
+			ArrayList<Item> items = Globals.DB_SERVICE.getItemsFromList(itemsList);
+
+			for (int i = 0; i < items.size(); ++i) {
+				Item item = items.get(i);
+				TrashItem trashItem = trashItems.get(i);
 
 				pv.put("image", "images/items/" + item.getId() + ".png");
 				pv.put("model", item.getModel());
