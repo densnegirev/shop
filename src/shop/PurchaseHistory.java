@@ -32,9 +32,9 @@ public class PurchaseHistory {
 				totalSum += item.getPrice() * trashItem.getAmount();
 			}
 
-			rows += "<tr><td class=\"right\" colspan=\"4\">Итого: " + totalSum + "&nbsp;</td><td></td></tr>";
+			rows += "<tr><td class=\"right\" colspan=\"4\">Итого: " + totalSum + "&nbsp;</td></tr>";
 		}
-		
+
 		pv.put("rows", rows);
 
 		return PageGenerator.getPage("server_tpl/include/orders_table.inc", pv);
