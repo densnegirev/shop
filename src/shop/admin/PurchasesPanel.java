@@ -10,7 +10,7 @@ import shop.TrashItem;
 import templater.PageGenerator;
 
 public class PurchasesPanel {
-	public String getContent(int userId) {
+	public String getContent() {
 		String rows = "";
 		Map<String, Object> pv = new HashMap<>();
 		ArrayList<Order> userOrders = Globals.DB_SERVICE.getOrders();

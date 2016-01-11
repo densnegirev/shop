@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import main.Globals;
 import main.UserProfile;
+import shop.admin.PurchasesPanel;
 import templater.PageBuilder;
 
 public class PurchasesServlet extends HttpServlet {
@@ -23,7 +24,7 @@ public class PurchasesServlet extends HttpServlet {
 		}
 
 		pageBuilder.setTitle(Globals.SITE_TITLE + " | Список заказов");
-		pageBuilder.setContent("Заказы");
+		pageBuilder.setContent(new PurchasesPanel().getContent());
 		pageBuilder.buildPage();
 	}
 }
