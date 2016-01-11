@@ -147,6 +147,50 @@ public class DBServiceFoxPro implements DBService {
 	}
 
 	@Override
+	public ArrayList<UserProfile> getUsers() {
+		ArrayList<UserProfile> res = new ArrayList<>();
+		String sql = "SELECT * FROM users ORDER BY users.familiya";
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				Object familiyaObj = rs.getObject(5);
+				Object imyaObj = rs.getObject(6);
+				Object otchestvoObj = rs.getObject(7);
+				Object emailObj = rs.getObject(8);
+				Object addressObj = rs.getObject(9);
+				Object phoneObj = rs.getObject(10);
+				UserProfile up = new UserProfile();
+
+				up.setID((Integer) rs.getObject(1));
+				up.setGroupID((Integer) rs.getObject(2));
+				up.setLogin(rs.getObject(3).toString());
+				up.setPassword(rs.getObject(4).toString());
+				up.setFamiliya(familiyaObj == null ? "" : familiyaObj.toString());
+				up.setImya(imyaObj == null ? "" : imyaObj.toString());
+				up.setOtchestvo(otchestvoObj == null ? "" : otchestvoObj.toString());
+				up.setEmail(emailObj == null ? "" : emailObj.toString());
+				up.setAddress(addressObj == null ? "" : addressObj.toString());
+				up.setPhone(phoneObj == null ? "" : phoneObj.toString());
+
+				res.add(up);
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
+	}
+
+	@Override
 	public UserGroup getGroup(int groupId) {
 		UserGroup ug = new UserGroup();
 

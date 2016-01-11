@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import main.Globals;
 import main.UserProfile;
+import shop.admin.UsersPanel;
 import templater.PageBuilder;
 
 public class UsersServlet extends HttpServlet {
@@ -23,7 +24,7 @@ public class UsersServlet extends HttpServlet {
 		}
 
 		pageBuilder.setTitle(Globals.SITE_TITLE + " | Список пользователей");
-		pageBuilder.setContent("Пользователи");
+		pageBuilder.setContent(new UsersPanel().getContent());
 		pageBuilder.buildPage();
 	}
 }

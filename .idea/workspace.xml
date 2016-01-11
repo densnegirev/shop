@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="213cdfaa-5b11-426f-a0ae-f3accb93a073" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/Main.java" afterPath="$PROJECT_DIR$/src/main/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/TrashServlet.java" afterPath="$PROJECT_DIR$/src/frontend/TrashServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/shop/admin/CatalogPanel.java" afterPath="$PROJECT_DIR$/src/shop/admin/CatalogPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBService.java" afterPath="$PROJECT_DIR$/src/dbservice/DBService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" afterPath="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/frontend/admin/UsersServlet.java" afterPath="$PROJECT_DIR$/src/frontend/admin/UsersServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shop.iws" />
@@ -27,16 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="55" selection-start-line="47" selection-start-column="55" selection-end-line="47" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AdminServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/frontend/AdminServlet.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -47,31 +39,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CatalogServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/frontend/admin/CatalogServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PurchasesServlet.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PurchasesServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/frontend/admin/PurchasesServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67901236">
-              <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersServlet.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UsersServlet.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/frontend/admin/UsersServlet.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7061728">
+              <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CatalogPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shop/admin/CatalogPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+              <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersPanel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shop/admin/UsersPanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users_table.inc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server_tpl/include/users_table.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users_table_row.inc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server_tpl/include/users_table_row.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -81,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -91,52 +113,32 @@
         <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
+              <caret line="151" column="65" selection-start-line="151" selection-start-column="65" selection-end-line="151" selection-end-column="65" />
               <folding>
-                <marker date="1452521958762" expanded="true" signature="842:1254" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="1616:1668" placeholder="SELECT * FRO..users..." />
-                <marker date="1452521958762" expanded="true" signature="4628:4697" placeholder="SELECT group..groups..." />
-                <marker date="1452521958762" expanded="true" signature="5206:5606" placeholder="SELECT items..items..." />
-                <marker date="1452521958762" expanded="true" signature="6610:7021" placeholder="SELECT items..items..." />
-                <marker date="1452521958762" expanded="true" signature="6610:7032" placeholder="SELECT items..items..." />
-                <marker date="1452521958762" expanded="true" signature="7996:8417" placeholder="SELECT items..items..." />
-                <marker date="1452521958762" expanded="true" signature="9608:9887" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="10447:10487" placeholder="DELETE FROM ..." />
-                <marker date="1452521958762" expanded="true" signature="11039:11082" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="11039:11091" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="11039:11111" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="11039:11112" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="11039:11121" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="11039:11139" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="11039:11142" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="11486:11612" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="11486:11648" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="11902:11915" placeholder="UPDATE items..." />
-                <marker date="1452521958762" expanded="true" signature="11902:11918" placeholder="UPDATE items..." />
-                <marker date="1452521958762" expanded="true" signature="11902:11919" placeholder="UPDATE items..." />
-                <marker date="1452521958762" expanded="true" signature="11902:11934" placeholder="UPDATE items..." />
-                <marker date="1452521958762" expanded="true" signature="11902:11935" placeholder="UPDATE items..." />
-                <marker date="1452521958762" expanded="true" signature="11902:11971" placeholder="UPDATE items..." />
-                <marker date="1452521958762" expanded="true" signature="11902:11980" placeholder="UPDATE items..." />
-                <marker date="1452521958762" expanded="true" signature="11902:11981" placeholder="UPDATE items..." />
-                <marker date="1452521958762" expanded="true" signature="11914:11915" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="12447:12565" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452521958762" expanded="true" signature="12447:12575" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452521958762" expanded="true" signature="13325:13389" placeholder="SELECT FROM ..ordersdbf..." />
-                <marker date="1452521958762" expanded="true" signature="13325:13414" placeholder="SELECT order..orderdata..." />
-                <marker date="1452521958762" expanded="true" signature="13947:14065" placeholder="SELECT order..orderdate..." />
-                <marker date="1452521958762" expanded="true" signature="13947:14066" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452521958762" expanded="true" signature="13947:14070" placeholder="SELECT fabri..fabricators..." />
-                <marker date="1452521958762" expanded="true" signature="13947:14084" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452521958762" expanded="true" signature="13947:14085" placeholder="SELECT order..ordersdbf..." />
-                <marker date="1452521958762" expanded="true" signature="14494:14576" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="15034:15163" placeholder="SELECT fabri..fabricators..." />
-                <marker date="1452521958762" expanded="true" signature="15546:15595" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="16026:16092" placeholder="SELECT types..types..." />
-                <marker date="1452521958762" expanded="true" signature="16479:16537" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="16972:17057" placeholder="SELECT hdfor..hdformats..." />
-                <marker date="1452521958762" expanded="true" signature="17452:17513" placeholder="INSERT INTO ..." />
-                <marker date="1452521958762" expanded="true" signature="17956:18052" placeholder="SELECT resol..resolutions..." />
+                <marker date="1452526941126" expanded="true" signature="842:1254" placeholder="INSERT INTO ..." />
+                <marker date="1452526941126" expanded="true" signature="1616:1668" placeholder="SELECT * FRO..users..." />
+                <marker date="1452526941126" expanded="true" signature="4584:4603" placeholder="SELECT * FRO..users..." />
+                <marker date="1452526941126" expanded="true" signature="4584:4627" placeholder="SELECT * FRO..users..." />
+                <marker date="1452526941126" expanded="true" signature="5973:6042" placeholder="SELECT group..groups..." />
+                <marker date="1452526941126" expanded="true" signature="6551:6951" placeholder="SELECT items..items..." />
+                <marker date="1452526941126" expanded="true" signature="7955:8377" placeholder="SELECT items..items..." />
+                <marker date="1452526941126" expanded="true" signature="9341:9762" placeholder="SELECT items..items..." />
+                <marker date="1452526941126" expanded="true" signature="10953:11232" placeholder="INSERT INTO ..." />
+                <marker date="1452526941126" expanded="true" signature="11792:11832" placeholder="DELETE FROM ..." />
+                <marker date="1452526941126" expanded="true" signature="12384:12487" placeholder="INSERT INTO ..." />
+                <marker date="1452526941126" expanded="true" signature="12831:12993" placeholder="INSERT INTO ..." />
+                <marker date="1452526941126" expanded="true" signature="13247:13326" placeholder="UPDATE items..." />
+                <marker date="1452526941126" expanded="true" signature="13792:13910" placeholder="SELECT order..ordersdbf..." />
+                <marker date="1452526941126" expanded="true" signature="14670:14759" placeholder="SELECT order..orderdata..." />
+                <marker date="1452526941126" expanded="true" signature="15292:15429" placeholder="SELECT MAX(o..ordersdbf..." />
+                <marker date="1452526941126" expanded="true" signature="15839:15921" placeholder="INSERT INTO ..." />
+                <marker date="1452526941126" expanded="true" signature="16379:16508" placeholder="SELECT fabri..fabricators..." />
+                <marker date="1452526941126" expanded="true" signature="16891:16940" placeholder="INSERT INTO ..." />
+                <marker date="1452526941126" expanded="true" signature="17371:17437" placeholder="SELECT types..types..." />
+                <marker date="1452526941126" expanded="true" signature="17824:17882" placeholder="INSERT INTO ..." />
+                <marker date="1452526941126" expanded="true" signature="18317:18402" placeholder="SELECT hdfor..hdformats..." />
+                <marker date="1452526941126" expanded="true" signature="18797:18858" placeholder="INSERT INTO ..." />
+                <marker date="1452526941126" expanded="true" signature="19301:19397" placeholder="SELECT resol..resolutions..." />
               </folding>
             </state>
           </provider>
@@ -162,9 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public_html/css/main.css" />
-        <option value="$PROJECT_DIR$/public_html/css/profile_panel.css" />
-        <option value="$PROJECT_DIR$/src/templater/PageGenerator.java" />
         <option value="$PROJECT_DIR$/src/main/AccountService.java" />
         <option value="$PROJECT_DIR$/src/product/Item.java" />
         <option value="$PROJECT_DIR$/server_tpl/index.html" />
@@ -198,21 +197,24 @@
         <option value="$PROJECT_DIR$/server_tpl/include/orders_table.inc" />
         <option value="$PROJECT_DIR$/server_tpl/include/orders_table_row.inc" />
         <option value="$PROJECT_DIR$/server_tpl/include/orders_table_row_header.inc" />
-        <option value="$PROJECT_DIR$/src/dbservice/DBService.java" />
         <option value="$PROJECT_DIR$/src/shop/PurchaseHistory.java" />
-        <option value="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
         <option value="$PROJECT_DIR$/src/shop/AdminPanel.java" />
         <option value="$PROJECT_DIR$/src/shop/admin/AdminPanel.java" />
-        <option value="$PROJECT_DIR$/src/shop/admin/CatalogPanel.java" />
         <option value="$PROJECT_DIR$/src/frontend/admin/AdminCatalogServlet.java" />
         <option value="$PROJECT_DIR$/server_tpl/include/catalog_table.inc" />
         <option value="$PROJECT_DIR$/server_tpl/include/catalog_table_row.inc" />
         <option value="$PROJECT_DIR$/src/frontend/admin/CatalogServlet.java" />
         <option value="$PROJECT_DIR$/src/frontend/AdminServlet.java" />
         <option value="$PROJECT_DIR$/src/frontend/TrashServlet.java" />
-        <option value="$PROJECT_DIR$/src/frontend/admin/UsersServlet.java" />
         <option value="$PROJECT_DIR$/src/frontend/admin/PurchasesServlet.java" />
         <option value="$PROJECT_DIR$/src/main/Main.java" />
+        <option value="$PROJECT_DIR$/src/shop/admin/CatalogPanel.java" />
+        <option value="$PROJECT_DIR$/src/dbservice/DBService.java" />
+        <option value="$PROJECT_DIR$/server_tpl/include/users_table.inc" />
+        <option value="$PROJECT_DIR$/server_tpl/include/users_table_row.inc" />
+        <option value="$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java" />
+        <option value="$PROJECT_DIR$/src/shop/admin/UsersPanel.java" />
+        <option value="$PROJECT_DIR$/src/frontend/admin/UsersServlet.java" />
       </list>
     </option>
   </component>
@@ -808,12 +810,12 @@
       <workItem from="1452338331263" duration="12725000" />
       <workItem from="1452424148923" duration="451000" />
       <workItem from="1452424805522" duration="11041000" />
-      <workItem from="1452509391889" duration="14496000" />
+      <workItem from="1452509391889" duration="16142000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126449000" />
+    <option name="totallyTimeSpent" value="128095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -869,27 +871,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public_html/css/profile_panel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7714631">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public_html/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.553809">
@@ -1134,80 +1115,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server_tpl/include/orders_table.inc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67901236">
           <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="256" column="0" selection-start-line="256" selection-start-column="0" selection-end-line="256" selection-end-column="0" />
-          <folding>
-            <marker date="1452521958762" expanded="true" signature="842:1254" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="1616:1668" placeholder="SELECT * FRO..users..." />
-            <marker date="1452521958762" expanded="true" signature="4628:4697" placeholder="SELECT group..groups..." />
-            <marker date="1452521958762" expanded="true" signature="5206:5606" placeholder="SELECT items..items..." />
-            <marker date="1452521958762" expanded="true" signature="6610:7021" placeholder="SELECT items..items..." />
-            <marker date="1452521958762" expanded="true" signature="6610:7032" placeholder="SELECT items..items..." />
-            <marker date="1452521958762" expanded="true" signature="7996:8417" placeholder="SELECT items..items..." />
-            <marker date="1452521958762" expanded="true" signature="9608:9887" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="10447:10487" placeholder="DELETE FROM ..." />
-            <marker date="1452521958762" expanded="true" signature="11039:11082" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="11039:11091" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="11039:11111" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="11039:11112" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="11039:11121" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="11039:11139" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="11039:11142" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="11486:11612" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="11486:11648" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="11902:11915" placeholder="UPDATE items..." />
-            <marker date="1452521958762" expanded="true" signature="11902:11918" placeholder="UPDATE items..." />
-            <marker date="1452521958762" expanded="true" signature="11902:11919" placeholder="UPDATE items..." />
-            <marker date="1452521958762" expanded="true" signature="11902:11934" placeholder="UPDATE items..." />
-            <marker date="1452521958762" expanded="true" signature="11902:11935" placeholder="UPDATE items..." />
-            <marker date="1452521958762" expanded="true" signature="11902:11971" placeholder="UPDATE items..." />
-            <marker date="1452521958762" expanded="true" signature="11902:11980" placeholder="UPDATE items..." />
-            <marker date="1452521958762" expanded="true" signature="11902:11981" placeholder="UPDATE items..." />
-            <marker date="1452521958762" expanded="true" signature="11914:11915" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="12447:12565" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452521958762" expanded="true" signature="12447:12575" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452521958762" expanded="true" signature="13325:13389" placeholder="SELECT FROM ..ordersdbf..." />
-            <marker date="1452521958762" expanded="true" signature="13325:13414" placeholder="SELECT order..orderdata..." />
-            <marker date="1452521958762" expanded="true" signature="13947:14065" placeholder="SELECT order..orderdate..." />
-            <marker date="1452521958762" expanded="true" signature="13947:14066" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452521958762" expanded="true" signature="13947:14070" placeholder="SELECT fabri..fabricators..." />
-            <marker date="1452521958762" expanded="true" signature="13947:14084" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452521958762" expanded="true" signature="13947:14085" placeholder="SELECT order..ordersdbf..." />
-            <marker date="1452521958762" expanded="true" signature="14494:14576" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="15034:15163" placeholder="SELECT fabri..fabricators..." />
-            <marker date="1452521958762" expanded="true" signature="15546:15595" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="16026:16092" placeholder="SELECT types..types..." />
-            <marker date="1452521958762" expanded="true" signature="16479:16537" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="16972:17057" placeholder="SELECT hdfor..hdformats..." />
-            <marker date="1452521958762" expanded="true" signature="17452:17513" placeholder="INSERT INTO ..." />
-            <marker date="1452521958762" expanded="true" signature="17956:18052" placeholder="SELECT resol..resolutions..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1223,14 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="91" column="13" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/admin/CatalogPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67901236">
-          <caret line="25" column="4" selection-start-line="25" selection-start-column="4" selection-end-line="25" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1265,14 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/AdminServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1281,26 +1177,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/admin/UsersServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/frontend/admin/CatalogServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+          <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/frontend/admin/CatalogServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/shop/admin/CatalogPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbservice/DBService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/AdminServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_tpl/include/orders_table.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13580246">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_tpl/include/users_table_row.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbservice/DBServiceFoxPro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="151" column="65" selection-start-line="151" selection-start-column="65" selection-end-line="151" selection-end-column="65" />
+          <folding>
+            <marker date="1452526941126" expanded="true" signature="842:1254" placeholder="INSERT INTO ..." />
+            <marker date="1452526941126" expanded="true" signature="1616:1668" placeholder="SELECT * FRO..users..." />
+            <marker date="1452526941126" expanded="true" signature="4584:4603" placeholder="SELECT * FRO..users..." />
+            <marker date="1452526941126" expanded="true" signature="4584:4627" placeholder="SELECT * FRO..users..." />
+            <marker date="1452526941126" expanded="true" signature="5973:6042" placeholder="SELECT group..groups..." />
+            <marker date="1452526941126" expanded="true" signature="6551:6951" placeholder="SELECT items..items..." />
+            <marker date="1452526941126" expanded="true" signature="7955:8377" placeholder="SELECT items..items..." />
+            <marker date="1452526941126" expanded="true" signature="9341:9762" placeholder="SELECT items..items..." />
+            <marker date="1452526941126" expanded="true" signature="10953:11232" placeholder="INSERT INTO ..." />
+            <marker date="1452526941126" expanded="true" signature="11792:11832" placeholder="DELETE FROM ..." />
+            <marker date="1452526941126" expanded="true" signature="12384:12487" placeholder="INSERT INTO ..." />
+            <marker date="1452526941126" expanded="true" signature="12831:12993" placeholder="INSERT INTO ..." />
+            <marker date="1452526941126" expanded="true" signature="13247:13326" placeholder="UPDATE items..." />
+            <marker date="1452526941126" expanded="true" signature="13792:13910" placeholder="SELECT order..ordersdbf..." />
+            <marker date="1452526941126" expanded="true" signature="14670:14759" placeholder="SELECT order..orderdata..." />
+            <marker date="1452526941126" expanded="true" signature="15292:15429" placeholder="SELECT MAX(o..ordersdbf..." />
+            <marker date="1452526941126" expanded="true" signature="15839:15921" placeholder="INSERT INTO ..." />
+            <marker date="1452526941126" expanded="true" signature="16379:16508" placeholder="SELECT fabri..fabricators..." />
+            <marker date="1452526941126" expanded="true" signature="16891:16940" placeholder="INSERT INTO ..." />
+            <marker date="1452526941126" expanded="true" signature="17371:17437" placeholder="SELECT types..types..." />
+            <marker date="1452526941126" expanded="true" signature="17824:17882" placeholder="INSERT INTO ..." />
+            <marker date="1452526941126" expanded="true" signature="18317:18402" placeholder="SELECT hdfor..hdformats..." />
+            <marker date="1452526941126" expanded="true" signature="18797:18858" placeholder="INSERT INTO ..." />
+            <marker date="1452526941126" expanded="true" signature="19301:19397" placeholder="SELECT resol..resolutions..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/admin/UsersPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server_tpl/include/users_table.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="9" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/frontend/admin/PurchasesServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67901236">
-          <caret line="25" column="38" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/frontend/admin/UsersServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7061728">
+          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
           <folding />
         </state>
       </provider>

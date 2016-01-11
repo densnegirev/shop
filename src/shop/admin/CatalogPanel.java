@@ -9,7 +9,6 @@ import templater.PageGenerator;
 
 public class CatalogPanel {
 	public String getContent() {
-
 		Map<String, Object> pageVariables = new HashMap<>();
 		ArrayList<Item> items = Globals.DB_SERVICE.getItems();
 		String rows = "";
