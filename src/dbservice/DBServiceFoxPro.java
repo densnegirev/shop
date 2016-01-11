@@ -61,7 +61,53 @@ public class DBServiceFoxPro implements DBService {
 
 	@Override
 	public UserProfile getUser(String userName) {
-		String sql = "SELECT * FROM users WHERE login = '" + userName + "'";
+		String sql = "SELECT * FROM users WHERE users.login = '" + userName + "'";
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			UserProfile up = new UserProfile();
+			boolean found = false;
+
+			if (rs.next()) {
+				Object familiyaObj = rs.getObject(5);
+				Object imyaObj = rs.getObject(6);
+				Object otchestvoObj = rs.getObject(7);
+				Object emailObj = rs.getObject(8);
+				Object addressObj = rs.getObject(9);
+				Object phoneObj = rs.getObject(10);
+
+				up.setID((Integer)rs.getObject(1));
+				up.setGroupID((Integer)rs.getObject(2));
+				up.setLogin(rs.getObject(3).toString());
+				up.setPassword(rs.getObject(4).toString());
+				up.setFamiliya(familiyaObj == null ? "" : familiyaObj.toString());
+				up.setImya(imyaObj == null ? "" : imyaObj.toString());
+				up.setOtchestvo(otchestvoObj == null ? "" : otchestvoObj.toString());
+				up.setEmail(emailObj == null ? "" : emailObj.toString());
+				up.setAddress(addressObj == null ? "" : addressObj.toString());
+				up.setPhone(phoneObj == null ? "" : phoneObj.toString());
+
+				found = true;
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+
+			return found ? up : null;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	@Override
+	public UserProfile getUser(int userId) {
+		String sql = "SELECT * FROM users WHERE users.user_id = " + userId;
 
 		try {
 			con = DriverManager.getConnection(url, "", "");
@@ -451,7 +497,7 @@ public class DBServiceFoxPro implements DBService {
 				String deliveryDate = rs.getObject(3) != null ? rs.getObject(3).toString() : "Не установлена";
 				ArrayList<TrashItem> items = getUserOrderItems(orderDateId);
 
-				res.add(new Order(orderDate, deliveryDate, items));
+				res.add(new Order(userId, orderDate, deliveryDate, items));
 			}
 
 			rs.close();
@@ -471,17 +517,18 @@ public class DBServiceFoxPro implements DBService {
 		try {
 			con = DriverManager.getConnection(url, "", "");
 
-			String sql = "SELECT ordersdbf.orderdate_id, ordersdbf.order_date, ordersdbf.delivery_date FROM ordersdbf";
+			String sql = "SELECT * FROM ordersdbf";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 
 			while (rs.next()) {
 				int orderDateId = (int)rs.getObject(1);
-				String orderDate = rs.getObject(2).toString();
-				String deliveryDate = rs.getObject(3) != null ? rs.getObject(3).toString() : "Не установлена";
+				int userId = (int)rs.getObject(2);
+				String orderDate = rs.getObject(3).toString();
+				String deliveryDate = rs.getObject(4) != null ? rs.getObject(3).toString() : "Не установлена";
 				ArrayList<TrashItem> items = getUserOrderItems(orderDateId);
 
-				res.add(new Order(orderDate, deliveryDate, items));
+				res.add(new Order(userId, orderDate, deliveryDate, items));
 			}
 
 			rs.close();

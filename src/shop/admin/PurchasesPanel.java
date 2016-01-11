@@ -18,10 +18,11 @@ public class PurchasesPanel {
 		for (Order order : userOrders) {
 			int totalSum = 0;
 
+			pv.put("login", Globals.DB_SERVICE.getUser(order.getUserId()).getLogin());
 			pv.put("orderDate", order.getOrderDate());
 			pv.put("deliveryDate", order.getDeliveryDate());
 
-			rows += PageGenerator.getPage("server_tpl/include/orders_table_row_header.inc", pv);
+			rows += PageGenerator.getPage("server_tpl/include/orders_table_row_header_2.inc", pv);
 
 			ArrayList<TrashItem> trashItems = order.getItems();
 			String itemsList = "(" + trashItems.get(0).getItemId();

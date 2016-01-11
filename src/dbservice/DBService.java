@@ -11,6 +11,7 @@ public interface DBService {
 	boolean addUser(String userName, UserProfile userProfile);
 	boolean updateUser(String password, String familiya, String imya, String otchestvo, String email, String address, String phone, UserProfile up);
 	UserProfile getUser(String userName);
+	UserProfile getUser(int userId);
 	ArrayList<UserProfile> getUsers();
 
 	UserGroup getGroup(int groupId);
