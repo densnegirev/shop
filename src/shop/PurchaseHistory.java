@@ -13,6 +13,8 @@ public class PurchaseHistory {
 		ArrayList<Order> userOrders = Globals.DB_SERVICE.getUserOrders(userId);
 
 		for (Order order : userOrders) {
+			int totalSum = 0;
+
 			pv.put("orderDate", order.getOrderDate());
 			pv.put("deliveryDate", order.getDeliveryDate());
 
@@ -27,9 +29,12 @@ public class PurchaseHistory {
 				pv.put("price", item.getPrice());
 
 				rows += PageGenerator.getPage("server_tpl/include/orders_table_row.inc", pv);
+				totalSum += item.getPrice() * trashItem.getAmount();
 			}
-		}
 
+			rows += "<tr><td class=\"right\" colspan=\"4\">Итого: " + totalSum + "&nbsp;</td><td></td></tr>";
+		}
+		
 		pv.put("rows", rows);
 
 		return PageGenerator.getPage("server_tpl/include/orders_table.inc", pv);
