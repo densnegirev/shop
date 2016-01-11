@@ -1,5 +1,5 @@
 <!-- catalog_table_row.inc BEGIN -->
-<form action="/admin" method="post">
+<form action="/admin_catalog" method="post">
 <tr>
 	<td class="preview"><img src="${image}" /></td>
 	<td>

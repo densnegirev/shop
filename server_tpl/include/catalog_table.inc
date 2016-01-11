@@ -6,7 +6,7 @@
 		<td class="center">Действия</td>
 	</tr>
 	${rows}
-	<form action="/admin" method="post" enctype="multipart/form-data">
+	<form action="/admin_catalog" method="post">
 	<tr>
 		<td class="preview center">
 

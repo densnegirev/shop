@@ -1,13 +1,15 @@
-package shop;
+package shop.admin;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import main.Globals;
+import shop.Item;
 import templater.PageGenerator;
 
-public class AdminPanel {
+public class CatalogPanel {
 	public String getContent() {
+
 		Map<String, Object> pageVariables = new HashMap<>();
 		ArrayList<Item> items = Globals.DB_SERVICE.getItems();
 		String rows = "";
