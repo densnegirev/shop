@@ -98,6 +98,6 @@ public class Trash {
 			return PageGenerator.getPage("server_tpl/include/trash_table.inc", pv);
 		}
 
-		return "Нет товаров";
+		return "Корзина пуста";
 	}
 }

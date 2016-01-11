@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import main.Globals;
 import main.UserProfile;
+import shop.PurchaseHistory;
 import templater.PageBuilder;
 
 public class TrashServlet extends HttpServlet {
@@ -22,8 +23,11 @@ public class TrashServlet extends HttpServlet {
 			return;
 		}
 
+		String content1 = Globals.TRASH.getContent(up.getId());
+		String content2 = new PurchaseHistory().getContent(up.getId());
+
 		pageBuilder.setTitle(Globals.SITE_TITLE + " | Корзина");
-		pageBuilder.setContent(Globals.TRASH.getContent(up.getId()));
+		pageBuilder.setContent(content1 + "<br />" + content2);
 		pageBuilder.buildPage();
 	}
 

@@ -3,6 +3,8 @@ package dbservice;
 import main.UserGroup;
 import main.UserProfile;
 import shop.Item;
+import shop.Order;
+
 import java.util.ArrayList;
 
 public interface DBService {
@@ -20,4 +22,6 @@ public interface DBService {
 	void deleteItem(String itemId);
 
 	void moveItemsFromTrash(int userId);
+
+	ArrayList<Order> getUserOrders(int userId);
 }

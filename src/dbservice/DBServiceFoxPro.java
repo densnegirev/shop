@@ -8,6 +8,7 @@ import java.util.Calendar;
 import java.util.LinkedList;
 import com.hxtt.sql.dbf.DBFDriver;
 import shop.Item;
+import shop.Order;
 import shop.TrashItem;
 import main.Globals;
 import main.UserGroup;
@@ -71,7 +72,6 @@ public class DBServiceFoxPro implements DBService {
 			boolean found = false;
 
 			if (rs.next()) {
-				// (id, group, login, password, familiya, imya, otchestvo, email, address, phone)
 				Object familiyaObj = rs.getObject(5);
 				Object imyaObj = rs.getObject(6);
 				Object otchestvoObj = rs.getObject(7);
@@ -357,6 +357,63 @@ public class DBServiceFoxPro implements DBService {
 
 			Globals.TRASH.deleteItem(userId, trashItem.getItemId());
 		}
+	}
+
+	@Override
+	public ArrayList<Order> getUserOrders(int userId) {
+		ArrayList<Order> res = new ArrayList<>();
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT ordersdbf.orderdate_id, ordersdbf.order_date, ordersdbf.delivery_date FROM ordersdbf WHERE ordersdbf.user_id = " + userId;
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				int orderDateId = (int)rs.getObject(1);
+				String orderDate = (String)rs.getObject(2);
+				String deliveryDate = (String)rs.getObject(3);
+				ArrayList<TrashItem> items = getUserOrderItems(orderDateId);
+
+				res.add(new Order(orderDate, deliveryDate, items));
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
+	}
+
+	private ArrayList<TrashItem> getUserOrderItems(int orderDateId) {
+		ArrayList<TrashItem> res = new ArrayList<>();
+
+		try {
+			con = DriverManager.getConnection(url, "", "");
+
+			String sql = "SELECT orderdata.item_id, orderdata.amount FROM orderdata WHERE orderdata.orderdate_id = " + orderDateId;
+			Statement stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				int itemId = (int)rs.getObject(1);
+				int amount = (int)rs.getObject(2);
+
+				res.add(new TrashItem(itemId, amount));
+			}
+
+			rs.close();
+			stmt.close();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return res;
 	}
 
 	private int getOrderDateId(int userId, String orderDate) {
