@@ -321,9 +321,10 @@ public class DBServiceFoxPro implements DBService {
 			e.printStackTrace();
 		}
 
+		int orderDateId = getOrderDateId(userId, orderDate);
+
 		for (TrashItem trashItem : userItems) {
 			try {
-				int orderDateId = getOrderDateId(userId, orderDate);
 				String sql = "INSERT INTO orderdata (orderdate_id, item_id, amount) VALUES (" +
 						orderDateId + ", " +
 						trashItem.getItemId() + ", " +
@@ -341,7 +342,6 @@ public class DBServiceFoxPro implements DBService {
 			}
 
 			try {
-				int orderDateId = getOrderDateId(userId, orderDate);
 				String sql = "UPDATE items SET count = count - " + trashItem.getAmount() + " WHERE item_id = " + trashItem.getItemId();
 
 				con = DriverManager.getConnection(url, "", "");
@@ -354,9 +354,9 @@ public class DBServiceFoxPro implements DBService {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-
-			Globals.TRASH.deleteItem(userId, trashItem.getItemId());
 		}
+
+		userItems.clear();
 	}
 
 	@Override
@@ -372,8 +372,8 @@ public class DBServiceFoxPro implements DBService {
 
 			while (rs.next()) {
 				int orderDateId = (int)rs.getObject(1);
-				String orderDate = (String)rs.getObject(2);
-				String deliveryDate = (String)rs.getObject(3);
+				String orderDate = rs.getObject(2).toString();
+				String deliveryDate = rs.getObject(3) != null ? rs.getObject(3).toString() : "Ожидается";
 				ArrayList<TrashItem> items = getUserOrderItems(orderDateId);
 
 				res.add(new Order(orderDate, deliveryDate, items));
@@ -422,7 +422,7 @@ public class DBServiceFoxPro implements DBService {
 		try {
 			con = DriverManager.getConnection(url, "", "");
 
-			String sql = "SELECT ordersdbf.orderdate_id FROM ordersdbf WHERE ordersdbf.user_id = " + userId + " AND ordersdbf.order_date = " + orderDate;
+			String sql = "SELECT ordersdbf.orderdate_id FROM ordersdbf WHERE ordersdbf.user_id = " + userId + " AND ordersdbf.order_date = '" + orderDate + "'";
 			Statement stmt = con.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
 

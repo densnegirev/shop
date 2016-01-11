@@ -12,7 +12,7 @@ public class PurchaseHistory {
 			content += order.getOrderDate() + ", " + order.getDeliveryDate() + "<br />";
 
 			for (TrashItem item : order.getItems()) {
-				content += item.getItemId() + ", " + item.getAmount() + "<br />";
+				content += "Товар: " + item.getItemId() + ", " + item.getAmount() + "<br />";
 			}
 		}
 
